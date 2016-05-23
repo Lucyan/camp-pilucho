@@ -5,8 +5,8 @@ piluchoApp.config(function ($routeProvider, $locationProvider){
   $routeProvider
   .when('/',
   {
-    templateUrl: 'app/modules/home/main.template.html',
-    controller: 'homeController'
+    templateUrl: 'app/modules/root/main.template.html',
+    controller: 'rootController'
   })
   .when('/static-page',
   {

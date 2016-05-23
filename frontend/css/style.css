@@ -20,6 +20,50 @@ body {
     color: #fff; }
     body a:hover, body a:active, body a:focus {
       color: #fff; }
+  body p {
+    color: #fff; }
+
+.button {
+  font-size: 15px;
+  color: #fff;
+  background-color: #0978BE;
+  border: 1px solid #fff;
+  padding: 5px 15px;
+  -ms-box-shadow: 0px 2px 12px -1px rgba(0, 0, 0, 0.67);
+  -o-box-shadow: 0px 2px 12px -1px rgba(0, 0, 0, 0.67);
+  -moz-box-shadow: 0px 2px 12px -1px rgba(0, 0, 0, 0.67);
+  -webkit-box-shadow: 0px 2px 12px -1px rgba(0, 0, 0, 0.67);
+  box-shadow: 0px 2px 12px -1px rgba(0, 0, 0, 0.67);
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  -ms-transition: transform linear 0.1s;
+  -o-transition: transform linear 0.1s;
+  -moz-transition: transform linear 0.1s;
+  -webkit-transition: transform linear 0.1s;
+  transition: transform linear 0.1s; }
+  .button i {
+    font-size: 15px;
+    margin-right: 5px; }
+  .button.facebook {
+    background-color: #3E549C;
+    border: none; }
+  .button:hover, .button:focus {
+    -ms-transform: scale(1.15);
+    -o-transform: scale(1.15);
+    -moz-transform: scale(1.15);
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+    outline: none; }
+  .button:active {
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    outline: none; }
 
 #main-menu {
   position: fixed;
@@ -53,5 +97,15 @@ body {
         margin-right: 5px; }
       #main-menu ul li.redes a {
         padding: 0 3px; }
+
+#home {
+  position: relative;
+  display: block;
+  padding-top: 130px; }
+  #home .conectar {
+    margin-top: 40px; }
+    #home .conectar button.facebook {
+      margin-top: 10px;
+      margin-bottom: 20px; }
 
 /*# sourceMappingURL=style.css.map */

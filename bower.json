@@ -22,7 +22,8 @@
     "angular-bootstrap": "*",
     "ngprogress": "*",
     "animate.css": "*",
-    "font-awesome": "~4.3.0"
+    "font-awesome": "~4.3.0",
+    "ng-backstretch": "*"
   },
   "devDependencies": {},
   "resolutions": {

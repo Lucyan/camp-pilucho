@@ -1,0 +1,45 @@
+#main-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 15px 20px 10px;
+	@include cross-browser(transition, background-color linear .3s);
+
+	&.scroll {
+		background-color: $color-black-red;
+		-webkit-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.48);
+		-moz-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.48);
+		box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.48);
+	}
+
+	ul {
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
+		vertical-align: middle;
+
+		li {
+			display: inline;
+			padding: 0 7px;
+
+			a {
+				font-size: 12px;
+
+				&.active {
+					text-decoration: underline;
+				}
+			}
+
+			&.user {
+				img {
+					margin-right: 5px;
+				}
+			}
+
+			&.redes a {
+				padding: 0 3px;
+			}
+		}
+	}
+}
