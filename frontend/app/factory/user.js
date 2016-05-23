@@ -1,4 +1,4 @@
-quickSurvey.factory("User", function ($rootScope, $http, $location, ngProgress){
+piluchoApp.factory("User", function ($rootScope, $http, $location, ngProgress){
   var interfaz = {
     data: null,
     isLogin: false,

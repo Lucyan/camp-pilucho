@@ -1,4 +1,4 @@
-saludalosojos.config(function ($routeProvider){
+piluchoApp.config(function ($routeProvider){
 
   $routeProvider
   .when('/',

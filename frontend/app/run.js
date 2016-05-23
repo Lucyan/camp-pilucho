@@ -1,4 +1,4 @@
-saludalosojos.run(function (){
+piluchoApp.run(function (){
 
   /**
   window.fbAsyncInit = function() {
