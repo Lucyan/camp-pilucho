@@ -1,0 +1,12 @@
+@mixin cross-browser($type, $value) {
+    -ms-#{$type}:$value;
+    -o-#{$type}:$value;
+    -moz-#{$type}:$value;
+    -webkit-#{$type}:$value;
+    #{$type}:$value;
+}
+
+$color-white:#fff;
+$colot-black:#000;
+$color-red:#E2383C;
+$color-black-red:#AC2B3E;

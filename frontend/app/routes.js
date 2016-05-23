@@ -1,9 +1,11 @@
-piluchoApp.config(function ($routeProvider){
+piluchoApp.config(function ($routeProvider, $locationProvider){
+
+  $locationProvider.html5Mode(true);
 
   $routeProvider
   .when('/',
   {
-    templateUrl: 'app/modules/home/home.template.html',
+    templateUrl: 'app/modules/home/main.template.html',
     controller: 'homeController'
   })
   .when('/static-page',

@@ -1,0 +1,57 @@
+html, body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+body {
+  background-color: #E2383C;
+  font-family: 'futuramedium'; }
+  body #content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: auto; }
+  body a {
+    color: #fff; }
+    body a:hover, body a:active, body a:focus {
+      color: #fff; }
+
+#main-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 20px 10px;
+  -ms-transition: background-color linear 0.3s;
+  -o-transition: background-color linear 0.3s;
+  -moz-transition: background-color linear 0.3s;
+  -webkit-transition: background-color linear 0.3s;
+  transition: background-color linear 0.3s; }
+  #main-menu.scroll {
+    background-color: #AC2B3E;
+    -webkit-box-shadow: 0px 0px 11px 1px rgba(0, 0, 0, 0.48);
+    -moz-box-shadow: 0px 0px 11px 1px rgba(0, 0, 0, 0.48);
+    box-shadow: 0px 0px 11px 1px rgba(0, 0, 0, 0.48); }
+  #main-menu ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: middle; }
+    #main-menu ul li {
+      display: inline;
+      padding: 0 7px; }
+      #main-menu ul li a {
+        font-size: 12px; }
+        #main-menu ul li a.active {
+          text-decoration: underline; }
+      #main-menu ul li.user img {
+        margin-right: 5px; }
+      #main-menu ul li.redes a {
+        padding: 0 3px; }
+
+/*# sourceMappingURL=style.css.map */
