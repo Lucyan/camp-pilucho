@@ -1,0 +1,22 @@
+#kit {
+	position: relative;
+	display: block;
+	padding-top: 50px;
+	padding-bottom: 100px;
+
+	.container {
+		max-width: 915px;
+	}
+
+	p {
+		color: $color-white;
+		max-width: 430px;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+	}
+
+	.row {
+		margin-bottom: 50px;
+	}
+}

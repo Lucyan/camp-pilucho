@@ -46,6 +46,7 @@ body {
 	@include cross-browser(box-shadow, 0px 2px 12px -1px rgba(0,0,0,0.67));
 	@include cross-browser(border-radius, 20px);
 	@include cross-browser(transition, transform linear .1s);
+	@include cross-browser(transform, scale(1));
 
 	i {
 		font-size: 15px;
@@ -73,3 +74,6 @@ body {
 @import "home";
 @import "galeria";
 @import "premios";
+@import "ganadores";
+@import "kit";
+@import "footer";

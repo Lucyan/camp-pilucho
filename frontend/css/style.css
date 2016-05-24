@@ -44,7 +44,12 @@ body {
   -o-transition: transform linear 0.1s;
   -moz-transition: transform linear 0.1s;
   -webkit-transition: transform linear 0.1s;
-  transition: transform linear 0.1s; }
+  transition: transform linear 0.1s;
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  -moz-transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1); }
   .button i {
     font-size: 15px;
     margin-right: 5px; }
@@ -237,5 +242,144 @@ body {
     width: 100%;
     height: 26px;
     background: url(../img/premios/separador.png); }
+
+#ganadores {
+  position: relative;
+  display: block;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  background: url(../img/ganadores/bg.png); }
+  #ganadores .packs {
+    width: 620px;
+    height: 194px;
+    margin: 50px auto 0;
+    background: url(../img/ganadores/bg-packs.png); }
+    #ganadores .packs .content {
+      padding-top: 43px;
+      margin-left: 3px;
+      margin-right: 3px;
+      color: #fff;
+      position: relative; }
+      #ganadores .packs .content .list {
+        position: relative;
+        width: 100%;
+        min-height: 135px;
+        overflow: hidden; }
+        #ganadores .packs .content .list ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          -ms-transition: margin-left linear 0.3s;
+          -o-transition: margin-left linear 0.3s;
+          -moz-transition: margin-left linear 0.3s;
+          -webkit-transition: margin-left linear 0.3s;
+          transition: margin-left linear 0.3s; }
+          #ganadores .packs .content .list ul li {
+            float: left; }
+            #ganadores .packs .content .list ul li .sorteo {
+              margin-top: 10px;
+              margin-bottom: 20px; }
+        #ganadores .packs .content .list .controles {
+          position: absolute;
+          width: 80%;
+          margin: 0 auto;
+          left: 0;
+          right: 0;
+          top: 10%;
+          min-height: 80px; }
+          #ganadores .packs .content .list .controles img {
+            opacity: .3;
+            -ms-transition: opacity linear 0.2s;
+            -o-transition: opacity linear 0.2s;
+            -moz-transition: opacity linear 0.2s;
+            -webkit-transition: opacity linear 0.2s;
+            transition: opacity linear 0.2s; }
+            #ganadores .packs .content .list .controles img.active {
+              opacity: 1;
+              cursor: pointer;
+              -ms-transition: transform linear 0.1s;
+              -o-transition: transform linear 0.1s;
+              -moz-transition: transform linear 0.1s;
+              -webkit-transition: transform linear 0.1s;
+              transition: transform linear 0.1s;
+              -ms-transform: scale(1);
+              -o-transform: scale(1);
+              -moz-transform: scale(1);
+              -webkit-transform: scale(1);
+              transform: scale(1); }
+              #ganadores .packs .content .list .controles img.active:hover, #ganadores .packs .content .list .controles img.active:focus {
+                -ms-transform: scale(1.15);
+                -o-transform: scale(1.15);
+                -moz-transform: scale(1.15);
+                -webkit-transform: scale(1.15);
+                transform: scale(1.15); }
+              #ganadores .packs .content .list .controles img.active:active {
+                -ms-transform: scale(1);
+                -o-transform: scale(1);
+                -moz-transform: scale(1);
+                -webkit-transform: scale(1);
+                transform: scale(1); }
+  #ganadores .super {
+    width: 620px;
+    height: 194px;
+    margin: 80px auto 0;
+    background: url(../img/ganadores/bg-super.png); }
+    #ganadores .super .content {
+      padding-top: 43px;
+      margin-left: 3px;
+      margin-right: 3px;
+      position: relative; }
+      #ganadores .super .content p {
+        color: #AC2B3E;
+        font-size: 25px;
+        max-width: 380px;
+        margin: 30px auto 0; }
+  #ganadores .footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 26px;
+    background: url(../img/ganadores/separador.png); }
+
+#kit {
+  position: relative;
+  display: block;
+  padding-top: 50px;
+  padding-bottom: 100px; }
+  #kit .container {
+    max-width: 915px; }
+  #kit p {
+    color: #fff;
+    max-width: 430px;
+    margin: 0 auto;
+    left: 0;
+    right: 0; }
+  #kit .row {
+    margin-bottom: 50px; }
+
+#footer {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 170px;
+  background: url(../img/footer/hinchas.png); }
+  #footer .content {
+    color: #fff;
+    padding-top: 110px;
+    position: relative;
+    font-size: 12px; }
+    #footer .content > * {
+      vertical-align: bottom;
+      line-height: 1; }
+    #footer .content span {
+      margin-left: 20px; }
+    #footer .content .bases {
+      position: absolute;
+      bottom: 0px;
+      right: 0px; }
+      #footer .content .bases a {
+        color: #FAE455;
+        font-size: 12px; }
 
 /*# sourceMappingURL=style.css.map */

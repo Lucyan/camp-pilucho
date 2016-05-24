@@ -1,0 +1,30 @@
+<img src="img/ganadores/title.png">
+
+<div class="packs">
+	<div class="content">
+		<div class="list" ng-init="setStyle()">
+			<ul ng-style="{width:elementWidth * sorteos.length, 'margin-left': elementWidth * indexList * -1}">
+				<li ng-repeat="sorteo in sorteos" ng-style="elementStyle">
+					<div class="sorteo">{{sorteo.title}}</div>
+					<div class="user">
+						<img ng-src="{{sorteo.ganador.avatar}}">
+						<span class="name">{{sorteo.ganador.name}}</span>
+					</div>
+				</li>
+			</ul>
+			<div class="controles text-left">
+				<img src="img/ganadores/arrow-left.png" ng-class="{active: sorteos.length > 1}" ng-click="indexList=(indexList > 0) ? indexList-1 : sorteos.length-1">
+				<img src="img/ganadores/arrow-right.png" class="pull-right" ng-class="{active: sorteos.length > 1}" ng-click="indexList=(indexList < sorteos.length-1) ? indexList+1 : 0">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="super">
+	<div class="content">
+		<p>
+			El viernes 24 de Junio se eligirá el ganador del Super Premio.
+		</p>
+	</div>
+</div>
+<div class="footer"></div>
