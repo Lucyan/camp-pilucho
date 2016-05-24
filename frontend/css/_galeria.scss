@@ -1,0 +1,100 @@
+#galeria {
+	position: relative;
+	display: block;
+	padding-top: 50px;
+	padding-bottom: 100px;
+	color: $color-white;
+
+	.container {
+
+		.list {
+			.row {
+				margin-top: 60px;
+				padding-bottom: 70px;
+				position: relative;
+
+				&:before {
+					display: block;
+					position: absolute;
+					bottom: 0px;
+					left: 0px;
+					width: 100%;
+					text-align: center;
+					content: url(../img/galeria/separador.png);
+				}
+
+				&:last-child:before {
+					content: '';
+				}
+
+				.block {
+
+					.user {
+						font-size: 14px;
+						vertical-align: middle;
+						margin-bottom: 10px;
+					}
+
+					.player {
+						position: relative;
+
+						&:before {
+							content: '';
+							display: block;
+							padding-top: 100%;
+						}
+
+						.content {
+							position: absolute;
+							top: 0px;
+							left: 0px;
+							width: 100%;
+							height: 100%;
+
+							img.fake {
+								position: relative;
+								width: 100%;
+								height: 100%;
+							}
+
+							img.play {
+								position: absolute;
+								top: 35%;
+								left: 0;
+								right: 0;
+								margin-left: auto;
+								margin-right: auto;
+							}
+						}
+					}
+
+					.share {
+						margin-top: 10px;
+						margin-bottom: 15px;
+
+						a {
+							margin: 0 5px;
+							
+							img {
+								@include cross-browser(transform, rotate(0deg));
+								@include cross-browser(transition, transform linear .3s);
+
+								&:hover {
+									@include cross-browser(transform, rotate(360deg));
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		button.ver-mas {
+			padding-bottom: 5px;
+
+			img {
+				max-width: 66px;
+			}
+		}
+	}
+}

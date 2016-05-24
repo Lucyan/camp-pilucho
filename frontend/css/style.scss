@@ -9,7 +9,7 @@ html, body {
 }
 
 body {
-	background-color: $color-red;
+	background: url(../img/bg.png);
 	font-family: 'futuramedium';
 
 	#content {
@@ -37,11 +37,12 @@ body {
 }
 
 .button {
+	font-family: 'freshmannormal';
 	font-size: 15px;
 	color: $color-white;
 	background-color: #0978BE;
 	border: 1px solid $color-white;
-	padding: 5px 15px;
+	padding: 5px 35px;
 	@include cross-browser(box-shadow, 0px 2px 12px -1px rgba(0,0,0,0.67));
 	@include cross-browser(border-radius, 20px);
 	@include cross-browser(transition, transform linear .1s);
@@ -54,6 +55,7 @@ body {
 	&.facebook {
 		background-color: #3E549C;
 		border: none;
+		font-family: 'futuramedium';
 	}
 
 	&:hover, &:focus {
@@ -69,3 +71,4 @@ body {
 
 @import "menu";
 @import "home";
+@import "galeria";

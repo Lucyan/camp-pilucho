@@ -10,3 +10,12 @@
     font-style: normal;
 
 }
+
+@font-face {
+    font-family: 'freshmannormal';
+    src: url('freshman-webfont.woff2') format('woff2'),
+         url('freshman-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

@@ -44,7 +44,7 @@
     <!-- <div ng-include="'app/controllers/menu/template.html'" id="container-menu"></div> -->
 
     <div id="content">
-      <ng-include src="'app/modules/menu/menu.template.html'" ng-controller="menuController" id="main-menu" ng-class="{scroll: toppage}"></ng-include>
+      <ng-include src="'app/modules/menu/menu.template.html'" ng-controller="menuController" id="main-menu" ng-class="{scroll: !toppage}"></ng-include>
       <div ng-view></div>
     </div>
 
