@@ -1,4 +1,4 @@
-piluchoApp.controller("menuController", function ($scope) {
+piluchoApp.controller("menuController", function ($scope, $rootScope) {
 	$scope.toppage = true;
 
 	$('#content').scroll(function() {
@@ -6,7 +6,8 @@ piluchoApp.controller("menuController", function ($scope) {
 			$scope.toppage = false;
 		else
 			$scope.toppage = true;
-		 
+		
+		$rootScope.windowPosY = $(this).scrollTop();
 		$scope.$apply();
 	});
 

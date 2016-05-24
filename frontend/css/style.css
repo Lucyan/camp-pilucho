@@ -345,7 +345,9 @@ body {
 #kit {
   position: relative;
   display: block;
-  padding-top: 50px; }
+  padding-top: 50px;
+  padding-bottom: 77px;
+  background: url(../img/kit/challa.png); }
   #kit .container {
     max-width: 915px; }
   #kit p {
@@ -362,6 +364,7 @@ body {
   display: block;
   width: 100%;
   height: 170px;
+  margin-top: -77px;
   background: url(../img/footer/hinchas.png); }
   #footer .content {
     color: #fff;
