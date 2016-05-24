@@ -345,8 +345,7 @@ body {
 #kit {
   position: relative;
   display: block;
-  padding-top: 50px;
-  padding-bottom: 100px; }
+  padding-top: 50px; }
   #kit .container {
     max-width: 915px; }
   #kit p {
