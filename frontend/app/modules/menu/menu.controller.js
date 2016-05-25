@@ -11,4 +11,17 @@ piluchoApp.controller("menuController", function ($scope, $rootScope) {
 		$scope.$apply();
 	});
 
+	$scope.goTo = function($event) {
+		$event.preventDefault();
+		var positionNow = $($($event.currentTarget).attr('href')).offset().top + $('#content').scrollTop();
+		if (positionNow > 0) positionNow -= 62;
+		console.log('scroll to', $($event.currentTarget).attr('href'), positionNow);
+		$('#content').animate({ scrollTop: positionNow }, 600);
+	}
+
+	$scope.isActive = function(id) {
+		if (($(id).offset().top - 63) < 0 && ($(id).offset().top * -1) < ($(id).height() + 63)) return true;
+		return false;
+	}
+
 });

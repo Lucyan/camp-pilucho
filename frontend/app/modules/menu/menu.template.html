@@ -2,19 +2,19 @@
 <div class="pull-right">
 	<ul>
 		<li>
-			<a href="/" class="active">Home</a>
+			<a href="#home" ng-click="goTo($event)" ng-class="{ active: isActive('#home')}">Home</a>
 		</li>
 		<li>
-			<a href="/">Participantes</a>
+			<a href="#galeria" ng-click="goTo($event)" ng-class="{ active: isActive('#galeria')}">Participantes</a>
 		</li>
 		<li>
-			<a href="/">Premios</a>
+			<a href="#premios" ng-click="goTo($event)" ng-class="{ active: isActive('#premios')}">Premios</a>
 		</li>
 		<li>
-			<a href="/">Ganadores</a>
+			<a href="#ganadores" ng-click="goTo($event)" ng-class="{ active: isActive('#ganadores')}">Ganadores</a>
 		</li>
 		<li>
-			<a href="/">Kit del Hincha</a>
+			<a href="#kit" ng-click="goTo($event)" ng-class="{ active: isActive('#kit')}">Kit del Hincha</a>
 		</li>
 		<li class="user">
 			<a href="/">

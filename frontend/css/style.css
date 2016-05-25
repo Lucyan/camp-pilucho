@@ -19,7 +19,10 @@ body {
   body a {
     color: #fff; }
     body a:hover, body a:active, body a:focus {
-      color: #fff; }
+      color: #fff;
+      text-decoration: underline; }
+    body a:focus {
+      text-decoration: none; }
   body p {
     color: #fff; }
 

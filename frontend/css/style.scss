@@ -28,6 +28,11 @@ body {
 
 		&:hover, &:active, &:focus {
 			color: $color-white;
+			text-decoration: underline;
+		}
+
+		&:focus {
+			text-decoration: none;
 		}
 	}
 
