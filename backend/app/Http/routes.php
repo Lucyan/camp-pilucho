@@ -14,3 +14,17 @@
 $app->get('/', function() use ($app) {
     return $app->welcome();
 });
+
+$app->group(["prefix" => "user", "namespace" => "App\Http\Controllers"], function ($app) {
+
+	$app->post('login', [
+		'as' => 'userLogin',
+		'uses' => 'UserController@login'
+	]);
+
+	$app->get('me', [
+		'as' => 'userMe',
+		'middleware' => 'auth',
+		'uses' => 'UserController@me'
+	]);
+});

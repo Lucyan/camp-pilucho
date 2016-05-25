@@ -6,9 +6,18 @@
 	.conectar {
 		margin-top: 40px;
 
+		.title {
+			margin-bottom: 30px;
+		}
+
 		button.facebook {
-			margin-top: 10px;
 			margin-bottom: 20px;
+		}
+
+		.game {
+			button {
+				margin: 0 10px;
+			}
 		}
 	}
 

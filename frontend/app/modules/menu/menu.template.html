@@ -17,10 +17,25 @@
 			<a href="#kit" ng-click="goTo($event)" ng-class="{ active: isActive('#kit')}">Kit del Hincha</a>
 		</li>
 		<li class="user">
-			<a href="/">
-				<img src="img/menu/user.png">
-				Iniciar sesión
-			</a>
+			<div class="login" ng-show="!userData">
+				<a href="#home" ng-click="goTo($event)">
+					<img src="img/menu/user.png">
+					Iniciar sesión
+				</a>
+			</div>
+			<div class="data" ng-show="userData">
+				<img ng-src="//graph.facebook.com/{{userData.fb_id}}/picture?type=square">
+				<div class="name">
+					{{userData.name}}
+					<div class="menu">
+						<ul>
+							<li>
+								<a href="#" ng-click="logout();">Logout</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</li>
 		<li class="redes">
 			<a href="/" target="_blank"><img src="img/redes/facebook.png"></a>

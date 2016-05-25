@@ -2,9 +2,20 @@
 	<div class="row">
 		<div class="col-md-6 text-right conectar">
 			<div class="text-center">
-				<img src="img/home/llamado.png">
-				<button class="button facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Conéctate con Facebook</button>
-				<p>Para participar tienes que iniciar sesión</p>
+				<img src="img/home/llamado.png" class="title">
+				<div class="loader" ng-show="loader">
+					<img src="img/home/loader.svg">
+				</div>
+				<div class="views" ng-show="!loader">
+					<div class="login" ng-show="!userLogin">
+						<button class="button facebook" ng-click="login();"><i class="fa fa-facebook" aria-hidden="true"></i> Conéctate con Facebook</button>
+						<p>Para participar tienes que iniciar sesión</p>
+					</div>
+					<div class="game" ng-show="userLogin">
+						<button class="button red" ng-click="jugar();">GRABAR ARENGA</button>
+						<button href="#premios" ng-click="goTo($event)" class="button">VER PREMIOS</button>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="col-md-6 text-left">

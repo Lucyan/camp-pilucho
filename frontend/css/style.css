@@ -26,7 +26,7 @@ body {
   body p {
     color: #fff; }
 
-.button {
+.button, a.button {
   font-family: 'freshmannormal';
   font-size: 15px;
   color: #fff;
@@ -53,21 +53,23 @@ body {
   -moz-transform: scale(1);
   -webkit-transform: scale(1);
   transform: scale(1); }
-  .button i {
+  .button.red, a.button.red {
+    background-color: #E2383C; }
+  .button i, a.button i {
     font-size: 15px;
     margin-right: 5px; }
-  .button.facebook {
+  .button.facebook, a.button.facebook {
     background-color: #3E549C;
     border: none;
     font-family: 'futuramedium'; }
-  .button:hover, .button:focus {
+  .button:hover, .button:focus, a.button:hover, a.button:focus {
     -ms-transform: scale(1.15);
     -o-transform: scale(1.15);
     -moz-transform: scale(1.15);
     -webkit-transform: scale(1.15);
     transform: scale(1.15);
     outline: none; }
-  .button:active {
+  .button:active, a.button:active {
     -ms-transform: scale(1);
     -o-transform: scale(1);
     -moz-transform: scale(1);
@@ -99,13 +101,57 @@ body {
     vertical-align: middle; }
     #main-menu ul li {
       display: inline;
-      padding: 0 7px; }
+      padding: 0 7px;
+      font-size: 12px;
+      color: #fff; }
       #main-menu ul li a {
         font-size: 12px; }
         #main-menu ul li a.active {
           text-decoration: underline; }
       #main-menu ul li.user img {
-        margin-right: 5px; }
+        margin-right: 5px;
+        max-width: 32px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -webkit-border-radius: 15px;
+        border-radius: 15px; }
+      #main-menu ul li.user > * {
+        display: inline; }
+      #main-menu ul li.user .data .name {
+        cursor: pointer;
+        position: relative;
+        display: inline; }
+        #main-menu ul li.user .data .name .menu {
+          position: absolute;
+          top: 18px;
+          left: 0;
+          background-color: #fff;
+          width: 100%;
+          max-height: 0px;
+          overflow: hidden;
+          -ms-border-radius: 5px;
+          -o-border-radius: 5px;
+          -moz-border-radius: 5px;
+          -webkit-border-radius: 5px;
+          border-radius: 5px;
+          -ms-transition: max-height linear 0.2s;
+          -o-transition: max-height linear 0.2s;
+          -moz-transition: max-height linear 0.2s;
+          -webkit-transition: max-height linear 0.2s;
+          transition: max-height linear 0.2s; }
+          #main-menu ul li.user .data .name .menu ul {
+            list-style: none;
+            text-align: left;
+            margin: 0;
+            padding: 0;
+            margin: 10px 0px; }
+            #main-menu ul li.user .data .name .menu ul li {
+              padding: 3px 0B; }
+              #main-menu ul li.user .data .name .menu ul li a {
+                color: #E2383C; }
+        #main-menu ul li.user .data .name:hover .menu {
+          max-height: 40px; }
       #main-menu ul li.redes a {
         padding: 0 3px; }
         #main-menu ul li.redes a img {
@@ -132,9 +178,12 @@ body {
   padding-top: 130px; }
   #home .conectar {
     margin-top: 40px; }
+    #home .conectar .title {
+      margin-bottom: 30px; }
     #home .conectar button.facebook {
-      margin-top: 10px;
       margin-bottom: 20px; }
+    #home .conectar .game button {
+      margin: 0 10px; }
   #home .footer {
     position: absolute;
     bottom: 0px;

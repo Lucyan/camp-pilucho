@@ -41,7 +41,7 @@ body {
 	}
 }
 
-.button {
+.button, a.button {
 	font-family: 'freshmannormal';
 	font-size: 15px;
 	color: $color-white;
@@ -52,6 +52,10 @@ body {
 	@include cross-browser(border-radius, 20px);
 	@include cross-browser(transition, transform linear .1s);
 	@include cross-browser(transform, scale(1));
+
+	&.red {
+		background-color: $color-red;
+	}
 
 	i {
 		font-size: 15px;

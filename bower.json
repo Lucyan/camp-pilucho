@@ -23,7 +23,8 @@
     "ngprogress": "*",
     "animate.css": "*",
     "font-awesome": "~4.3.0",
-    "ng-backstretch": "*"
+    "ng-backstretch": "*",
+    "angular-easyfb": "*"
   },
   "devDependencies": {},
   "resolutions": {

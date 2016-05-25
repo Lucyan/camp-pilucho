@@ -1,85 +1,74 @@
-piluchoApp.factory("User", function ($rootScope, $http, $location, ngProgress){
-  var interfaz = {
-    data: null,
-    isLogin: false,
-    register: false,
+piluchoApp.factory("User", function ($http, ezfb, $rootScope){
+	var baseAPI = '/api/user/';
 
-    fetch: function(callback) {
-      var _this = this;
-      $http.get(fbconfig.apiUrl + '/me')
-        .success(function(data, status, headers, config) {
-          _this.afterlogin(data);
-          if (callback) callback(true);
-        })
-        .error(function(data, status, headers, config) {
-          if (callback) callback(false, data);
-        });
+	var interfaz = {
+		data: null,
+		isLogin: false,
 
-      return this;
-    },
+		fetch: function(callback) {
+			if (this.isLogin) {
+				var _this = this;
+				$http.get(baseAPI + 'me').then(function(resp) {
+					_this.data = resp.data;
+					$rootScope.userLogin = true;
+					if (callback) callback();
+				});
+			}
 
-    set: function(datos) {
-      this.data = datos;
-      return this;
-    },
+			return this;
+		},
 
-    save: function(callback) {
-      var _this = this;
-      if (this.isLogin){
-        $http.put(fbconfig.apiUrl + '/me', this.data)
-          .success(function(data, status, headers, config) {
-            _this.afterlogin(data);
-            if (callback) callback(true);
-          })
-          .error(function(data, status, headers, config) {
-            if (callback) callback(false, data);
-          });
-      }else{
-        $http.post(fbconfig.apiUrl + '/auth/email', this.data)
-          .success(function(data, status, headers, config) {
-            _this.afterlogin(data);
-            if (callback) callback(true);
-          })
-          .error(function(data, status, headers, config) {
-            if (callback) callback(false, data);
-          });
-      }
+		login: function(callback) {
+			var _this = this;
+			ezfb.login(function(res) {
+				if (res.authResponse) {
+					_this.loginBackend({accessToken: res.authResponse.accessToken, userID: res.authResponse.userID}, callback);
+				} else if (callback) callback(false);
+			}, {scope: 'public_profile, email'});
+		},
 
-      return this;
-    },
+		logout: function() {
+			localStorage.removeItem('session');
+			$http.defaults.headers.common.Authorization = undefined;
+			this.data = null;
+			this.isLogin = false;
+			$rootScope.userLogin = false;
+		},
 
-    login: function (email, password, callback) {
-      var _this = this;
-      $http.post(fbconfig.apiUrl + '/login', {email: email, password: password})
-        .success(function(data, status, headers, config) {
-          _this.afterlogin(data);
-          if (callback) callback(true);
-        })
-        .error(function(data, status, headers, config) {
-          if (callback) callback(false, data);
-        });
-      return this;
-    },
+		loginBackend: function(data, callback) {
+			var _this = this;
+			$http.post(baseAPI + 'login', data).then(function(resp) {
+				_this.setHeaders(resp.data.token);
+				_this.setLocalStorage(resp.data.token);
+				_this.isLogin = true;
+				_this.fetch(callback);
+			});
+		},
 
-    logout: function(callback) {
-      var _this = this;
-      $http.post(fbconfig.apiUrl + '/logout')
-        .success(function() {
-          _this.data = null;
-          _this.isLogin = false;
-          _this.register = false;
-          $location.path('/');
-          if (callback) callback();
-        });
-      return this;
-    },
+		setLocalStorage: function(token) {
+			localStorage.setItem('session', JSON.stringify(token));
+		},
 
-    afterlogin: function (data) {
-      this.data = data;
-      this.isLogin = true;
-      if (data.register)
-        this.register = true;
-    }
-  }
-  return interfaz;
+		getLocalStorage: function() {
+			var token = JSON.parse(localStorage.getItem('session'));
+			if (token) return token;
+			return false;
+		},
+
+		setHeaders: function(token) {
+			$http.defaults.headers.common.Authorization = token;
+		},
+
+		checkSession: function(callback) {
+			var token = this.getLocalStorage();
+			if (token) {
+				this.setHeaders(token);
+				this.isLogin = true;
+				if (callback) callback(true);
+			} else {
+				if (callback) callback(false);
+			}
+		}
+	}
+	return interfaz;
 });

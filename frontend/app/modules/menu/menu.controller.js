@@ -1,4 +1,4 @@
-piluchoApp.controller("menuController", function ($scope, $rootScope) {
+piluchoApp.controller("menuController", function ($scope, $rootScope, User) {
 	$scope.toppage = true;
 
 	$('#content').scroll(function() {
@@ -11,7 +11,7 @@ piluchoApp.controller("menuController", function ($scope, $rootScope) {
 		$scope.$apply();
 	});
 
-	$scope.goTo = function($event) {
+	$rootScope.goTo = function($event) {
 		$event.preventDefault();
 		var positionNow = $($($event.currentTarget).attr('href')).offset().top + $('#content').scrollTop();
 		if (positionNow > 0) positionNow -= 62;
@@ -22,6 +22,21 @@ piluchoApp.controller("menuController", function ($scope, $rootScope) {
 	$scope.isActive = function(id) {
 		if ($(id).length > 0 && ($(id).offset().top - 63) < 0 && ($(id).offset().top * -1) < ($(id).height() + 63)) return true;
 		return false;
+	}
+
+	$scope.userData = false;
+
+	$rootScope.$watch('userLogin', function(newValue, oldValue) {
+		if (newValue) {
+			$scope.userData = User.data;
+		} else {
+			$scope.userData = false;
+		}
+	});
+
+
+	$scope.logout = function() {
+		User.logout();
 	}
 
 });

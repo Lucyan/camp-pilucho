@@ -2,7 +2,7 @@
 
 require_once __DIR__.'/../../vendor/autoload.php';
 
-// Dotenv::load(__DIR__.'/../../');
+Dotenv::load(__DIR__.'/../../');
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +19,9 @@ $app = new Laravel\Lumen\Application(
   	realpath(__DIR__.'/../')
 );
 
-// $app->withFacades();
+$app->withFacades();
 
-// $app->withEloquent();
+$app->withEloquent();
 
 /*
 |--------------------------------------------------------------------------
@@ -66,6 +66,14 @@ $app->singleton(
 // $app->routeMiddleware([
 
 // ]);
+
+$app->middleware([
+    Illuminate\Session\Middleware\StartSession::class
+]);
+
+$app->routeMiddleware([
+    'auth' => App\Http\Middleware\AuthMiddleware::class
+]);
 
 /*
 |--------------------------------------------------------------------------

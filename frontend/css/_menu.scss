@@ -23,6 +23,8 @@
 		li {
 			display: inline;
 			padding: 0 7px;
+			font-size: 12px;
+			color: $color-white;
 
 			a {
 				font-size: 12px;
@@ -35,6 +37,54 @@
 			&.user {
 				img {
 					margin-right: 5px;
+					max-width: 32px;
+					@include cross-browser(border-radius, 15px);
+				}
+
+				& > * {
+					display: inline;
+				}
+
+				.data {
+
+					.name {
+						cursor: pointer;
+						position: relative;
+						display: inline;
+
+						.menu {
+							position: absolute;
+							top: 18px;
+							left: 0;
+							background-color: $color-white;
+							width: 100%;
+							max-height: 0px;
+							overflow: hidden;
+							@include cross-browser(border-radius, 5px);
+							@include cross-browser(transition, max-height linear .2s);
+
+							ul {
+								list-style: none;
+								text-align: left;
+								margin: 0;
+								padding: 0;
+								margin: 10px 0px;
+
+								li {
+
+									padding: 3px 0B;
+
+									a {
+										color: $color-red;
+									}
+								}
+							}
+						}
+
+						&:hover .menu {
+							max-height: 40px;
+						}
+					}
 				}
 			}
 
