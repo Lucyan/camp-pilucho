@@ -20,7 +20,7 @@ piluchoApp.controller("menuController", function ($scope, $rootScope) {
 	}
 
 	$scope.isActive = function(id) {
-		if (($(id).offset().top - 63) < 0 && ($(id).offset().top * -1) < ($(id).height() + 63)) return true;
+		if ($(id).length > 0 && ($(id).offset().top - 63) < 0 && ($(id).offset().top * -1) < ($(id).height() + 63)) return true;
 		return false;
 	}
 
