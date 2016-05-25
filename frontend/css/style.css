@@ -62,14 +62,14 @@ body {
     background-color: #3E549C;
     border: none;
     font-family: 'futuramedium'; }
-  .button:hover, .button:focus, a.button:hover, a.button:focus {
+  .button:hover, a.button:hover {
     -ms-transform: scale(1.15);
     -o-transform: scale(1.15);
     -moz-transform: scale(1.15);
     -webkit-transform: scale(1.15);
     transform: scale(1.15);
     outline: none; }
-  .button:active, a.button:active {
+  .button:active, .button:focus, a.button:active, a.button:focus {
     -ms-transform: scale(1);
     -o-transform: scale(1);
     -moz-transform: scale(1);
@@ -127,7 +127,7 @@ body {
           top: 18px;
           left: 0;
           background-color: #fff;
-          width: 100%;
+          min-width: 100%;
           max-height: 0px;
           overflow: hidden;
           -ms-border-radius: 5px;

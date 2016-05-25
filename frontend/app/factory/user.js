@@ -28,11 +28,11 @@ piluchoApp.factory("User", function ($http, ezfb, $rootScope){
 		},
 
 		logout: function() {
+			$rootScope.userLogin = false;
 			localStorage.removeItem('session');
 			$http.defaults.headers.common.Authorization = undefined;
 			this.data = null;
 			this.isLogin = false;
-			$rootScope.userLogin = false;
 		},
 
 		loginBackend: function(data, callback) {

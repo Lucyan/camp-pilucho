@@ -68,12 +68,12 @@ body {
 		font-family: 'futuramedium';
 	}
 
-	&:hover, &:focus {
+	&:hover {
 		@include cross-browser(transform, scale(1.15));
 		outline: none;
 	}
 
-	&:active {
+	&:active, &:focus {
 		@include cross-browser(transform, scale(1));
 		outline: none;
 	}
