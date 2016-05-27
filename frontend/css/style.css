@@ -261,7 +261,7 @@ body {
         bottom: 0px;
         background: url(../img/home/movil/pilucho.png);
         background-size: 100% auto;
-        height: 510px;
+        height: 466px;
         max-height: 100%;
         padding-top: 190px; }
         #agegate .container .title {
@@ -730,6 +730,12 @@ body {
   padding-top: 50px;
   padding-bottom: 100px;
   background: url(../img/ganadores/bg.png); }
+  #ganadores .title-semanal {
+    display: none;
+    margin: 40px auto 30px; }
+    @media screen and (max-width: 580px) {
+      #ganadores .title-semanal {
+        display: block; } }
   #ganadores .packs {
     width: 620px;
     height: 194px;
@@ -800,6 +806,20 @@ body {
                 -moz-transform: scale(1);
                 -webkit-transform: scale(1);
                 transform: scale(1); }
+    #ganadores .packs.no-winners p {
+      font-size: 25px;
+      padding-top: 65px;
+      margin: 0 35px; }
+    @media screen and (max-width: 580px) {
+      #ganadores .packs.no-winners {
+        background: url(../img/ganadores/movil/bg-packs.png);
+        width: 310px;
+        height: 254px;
+        margin: 0 auto; }
+        #ganadores .packs.no-winners p {
+          font-size: 25px;
+          padding-top: 47px;
+          margin: 0 10px; } }
   #ganadores .super {
     width: 620px;
     height: 194px;
@@ -815,6 +835,13 @@ body {
         font-size: 25px;
         max-width: 380px;
         margin: 30px auto 0; }
+    @media screen and (max-width: 580px) {
+      #ganadores .super {
+        background: url(../img/ganadores/movil/bg-super.png);
+        width: 310px;
+        height: 189px; }
+        #ganadores .super .content p {
+          margin-top: 15px; } }
   #ganadores .footer {
     position: absolute;
     bottom: 0px;

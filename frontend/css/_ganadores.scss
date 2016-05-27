@@ -5,6 +5,16 @@
 	padding-bottom: 100px;
 	background: url(../img/ganadores/bg.png);
 
+
+	.title-semanal {
+		display: none;
+		margin: 40px auto 30px;
+
+		@media screen and (max-width: $screen-xs) {
+			display: block;
+		}
+	}
+
 	.packs {
 		width: 620px;
 		height: 194px;
@@ -71,6 +81,27 @@
 				}
 			}
 		}
+
+		&.no-winners {
+			p {
+				font-size: 25px;
+				padding-top: 65px;
+				margin: 0 35px;
+			}
+
+			@media screen and (max-width: $screen-xs) {
+				background: url(../img/ganadores/movil/bg-packs.png);
+				width: 310px;
+				height: 254px;
+				margin: 0 auto;
+
+				p {
+					font-size: 25px;
+					padding-top: 47px;
+					margin: 0 10px;
+				}
+			} 
+		}
 	}
 
 	.super {
@@ -90,6 +121,16 @@
 				font-size: 25px;
 				max-width: 380px;
 				margin: 30px auto 0;
+			}
+		}
+
+		@media screen and (max-width: $screen-xs) {
+			background: url(../img/ganadores/movil/bg-super.png);
+			width: 310px;
+			height: 189px;
+
+			.content p {
+				margin-top: 15px;
 			}
 		}
 	}
