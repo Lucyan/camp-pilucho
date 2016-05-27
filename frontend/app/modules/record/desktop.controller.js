@@ -1,4 +1,4 @@
-piluchoApp.controller("recordDektopController", function ($scope, User, $rootScope) {
+piluchoApp.controller("recordDektopController", function ($scope, User, $rootScope, deviceDetector) {
 	var mediaConstraints = {
 		audio: true
 	};
@@ -9,7 +9,7 @@ piluchoApp.controller("recordDektopController", function ($scope, User, $rootSco
 	restart();
 
 	$scope.mediaRecorder = false;
-	navigator.getUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
+	if (deviceDetector.os != 'ios') navigator.getUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
 
 	function onMediaSuccess(stream) {
 	    $scope.mediaRecorder = new MediaStreamRecorder(stream);

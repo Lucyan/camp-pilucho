@@ -1,6 +1,6 @@
 'use strict';
 
-var piluchoApp = angular.module("piluchoApp",["ngRoute", "ui.bootstrap", "ng-backstretch", "ezfb"]);
+var piluchoApp = angular.module("piluchoApp",["ngRoute", "ui.bootstrap", "ng-backstretch", "ezfb", "ng.deviceDetector"]);
 
 /**
  *  Main App Controller
