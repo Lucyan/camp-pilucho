@@ -7,6 +7,12 @@
 
 	.container {
 		max-width: 680px;
+
+		@media screen and (max-width: $screen-xs) {
+			.row > div:last-child {
+				margin-top: 80px;
+			}
+		}
 	}
 
 	img.title {

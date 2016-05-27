@@ -92,6 +92,9 @@ body {
   -moz-transition: background-color linear 0.3s;
   -webkit-transition: background-color linear 0.3s;
   transition: background-color linear 0.3s; }
+  #main-menu .logo {
+    position: relative;
+    z-index: 1020; }
   @media screen and (max-width: 580px) {
     #main-menu {
       text-align: center; } }
@@ -184,6 +187,52 @@ body {
             -moz-transform: rotate(360deg);
             -webkit-transform: rotate(360deg);
             transform: rotate(360deg); }
+  #main-menu .menu-movil {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    cursor: pointer;
+    width: 34px;
+    z-index: 1030; }
+  #main-menu .menu-movil-content {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background-color: #AC2B3E;
+    width: 100%;
+    height: 100%;
+    -ms-transition: left linear 0.2s;
+    -o-transition: left linear 0.2s;
+    -moz-transition: left linear 0.2s;
+    -webkit-transition: left linear 0.2s;
+    transition: left linear 0.2s; }
+    #main-menu .menu-movil-content.open {
+      left: 0; }
+      @media screen and (min-width: 580px) {
+        #main-menu .menu-movil-content.open {
+          left: -100%; } }
+    #main-menu .menu-movil-content .container {
+      padding-top: 100px;
+      max-width: 80%; }
+      #main-menu .menu-movil-content .container .row {
+        margin-bottom: 40px; }
+        #main-menu .menu-movil-content .container .row a img {
+          width: 57px;
+          display: block;
+          margin: 0 auto 20px; }
+          #main-menu .menu-movil-content .container .row a img.user {
+            -ms-border-radius: 30px;
+            -o-border-radius: 30px;
+            -moz-border-radius: 30px;
+            -webkit-border-radius: 30px;
+            border-radius: 30px; }
+    #main-menu .menu-movil-content .redes {
+      position: absolute;
+      width: 100%;
+      bottom: 20px;
+      left: 0; }
+      #main-menu .menu-movil-content .redes a {
+        margin: 0 10px; }
 
 #record {
   display: block;
@@ -452,6 +501,7 @@ body {
       margin: 0 10px; }
       @media screen and (max-width: 580px) {
         #home .conectar .game button {
+          margin: 0;
           margin-bottom: 10px; } }
   #home .footer {
     position: absolute;
@@ -467,10 +517,17 @@ body {
   padding-top: 50px;
   padding-bottom: 100px;
   color: #fff; }
+  @media screen and (max-width: 580px) {
+    #galeria .title {
+      margin-bottom: 30px; } }
   #galeria .container .list .row {
     margin-top: 60px;
     padding-bottom: 70px;
     position: relative; }
+    @media screen and (max-width: 580px) {
+      #galeria .container .list .row {
+        padding-bottom: 0px;
+        margin-top: 0px; } }
     #galeria .container .list .row:before {
       display: block;
       position: absolute;
@@ -479,6 +536,9 @@ body {
       width: 100%;
       text-align: center;
       content: url(../img/galeria/separador.png); }
+      @media screen and (max-width: 580px) {
+        #galeria .container .list .row:before {
+          display: none; } }
     #galeria .container .list .row:last-child:before {
       content: ''; }
     #galeria .container .list .row .block .user {
@@ -540,10 +600,28 @@ body {
             -moz-transform: rotate(360deg);
             -webkit-transform: rotate(360deg);
             transform: rotate(360deg); }
+    @media screen and (max-width: 580px) {
+      #galeria .container .list .row .block {
+        margin-top: 30px;
+        padding-bottom: 30px;
+        position: relative; }
+        #galeria .container .list .row .block:before {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          background: url(../img/galeria/movil/separador.png);
+          width: 100%;
+          height: 5px;
+          background-size: 100%; } }
   #galeria .container button.ver-mas {
     padding-bottom: 5px; }
     #galeria .container button.ver-mas img {
       max-width: 66px; }
+    @media screen and (max-width: 580px) {
+      #galeria .container button.ver-mas {
+        margin-top: 35px; } }
   #galeria .footer {
     position: absolute;
     bottom: 0px;
@@ -560,6 +638,9 @@ body {
   background-color: #fff; }
   #premios .container {
     max-width: 680px; }
+    @media screen and (max-width: 580px) {
+      #premios .container .row > div:last-child {
+        margin-top: 80px; } }
   #premios img.title {
     margin-bottom: 50px; }
   #premios p {
@@ -689,6 +770,14 @@ body {
     right: 0; }
   #kit .row {
     margin-bottom: 50px; }
+  @media screen and (max-width: 580px) {
+    #kit p {
+      font-size: 18px;
+      margin-top: 40px; }
+    #kit .row {
+      margin-bottom: 0px; }
+      #kit .row > div {
+        margin-bottom: 60px; } }
 
 #footer {
   position: relative;
@@ -702,11 +791,12 @@ body {
     padding-top: 110px;
     position: relative;
     font-size: 12px; }
-    #footer .content > * {
-      vertical-align: bottom;
-      line-height: 1; }
     #footer .content span {
       margin-left: 20px; }
+      @media screen and (max-width: 580px) {
+        #footer .content span {
+          margin: 0 auto;
+          font-size: 11px; } }
     #footer .content .bases {
       position: absolute;
       bottom: 0px;
@@ -714,5 +804,21 @@ body {
       #footer .content .bases a {
         color: #FAE455;
         font-size: 12px; }
+      @media screen and (max-width: 580px) {
+        #footer .content .bases {
+          position: relative;
+          margin-top: 10px; } }
+    #footer .content > * {
+      vertical-align: bottom;
+      line-height: 1; }
+      @media screen and (max-width: 580px) {
+        #footer .content > * {
+          display: block;
+          margin: 0 auto;
+          text-align: center;
+          margin-bottom: 10px; } }
+    @media screen and (max-width: 580px) {
+      #footer .content {
+        padding-top: 75px; } }
 
 /*# sourceMappingURL=style.css.map */

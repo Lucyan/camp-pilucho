@@ -12,13 +12,13 @@
 		position: relative;
 		font-size: 12px;
 
-		> * {
-			vertical-align: bottom;
-			line-height: 1;
-		}
-
 		span {
 			margin-left: 20px;
+
+			@media screen and (max-width: $screen-xs) {
+				margin: 0 auto;
+				font-size: 11px;
+			}
 		}
 
 		.bases {
@@ -30,6 +30,27 @@
 				color: #FAE455;
 				font-size: 12px;
 			}
+
+			@media screen and (max-width: $screen-xs) {
+				position: relative;
+				margin-top: 10px;
+			}
+		}
+
+		> * {
+			vertical-align: bottom;
+			line-height: 1;
+
+			@media screen and (max-width: $screen-xs) {
+				display: block;
+				margin: 0 auto;
+				text-align: center;
+				margin-bottom: 10px;
+			}
+		}
+
+		@media screen and (max-width: $screen-xs) {
+			padding-top: 75px;
 		}
 	}
 }

@@ -1,5 +1,6 @@
 piluchoApp.controller("menuController", function ($scope, $rootScope, User) {
 	$scope.toppage = true;
+	$scope.toggleClassMenuMovil = false;
 
 	$('#content').scroll(function() {
 		if ($(this).scrollTop() > 0)
@@ -13,9 +14,9 @@ piluchoApp.controller("menuController", function ($scope, $rootScope, User) {
 
 	$rootScope.goTo = function($event) {
 		$event.preventDefault();
+		$scope.toggleClassMenuMovil = false;
 		var positionNow = $($($event.currentTarget).attr('href')).offset().top + $('#content').scrollTop();
 		if (positionNow > 0) positionNow -= 62;
-		console.log('scroll to', $($event.currentTarget).attr('href'), positionNow);
 		$('#content').animate({ scrollTop: positionNow }, 600);
 	}
 
@@ -37,6 +38,10 @@ piluchoApp.controller("menuController", function ($scope, $rootScope, User) {
 
 	$scope.logout = function() {
 		User.logout();
+	}
+
+	$scope.toggleMenuMovil = function() {
+		$scope.toggleClassMenuMovil = ($scope.toggleClassMenuMovil) ? false : true;
 	}
 
 });

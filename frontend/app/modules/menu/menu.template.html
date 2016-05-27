@@ -1,4 +1,5 @@
-<img src="/img/menu/logo.png">
+<img src="/img/menu/logo.png" class="logo">
+<img src="img/menu/movil/menu-movil.png" ng-click="toggleMenuMovil()" class="menu-movil">
 <div class="pull-right hidden-xs">
 	<ul>
 		<li>
@@ -43,4 +44,63 @@
 			<a href="/" target="_blank"><img src="img/redes/youtube.png"></a>
 		</li>
 	</ul>
+</div>
+<div class="menu-movil-content" ng-class="{open: toggleClassMenuMovil}">
+	<div class="container text-center">
+		<div class="row">
+			<div class="col-xs-6">
+				<a href="#home" ng-click="goTo($event)">
+					<img src="img/menu/movil/home.png">
+					Home
+				</a>
+			</div>
+			<div class="col-xs-6">
+				<a href="#galeria" ng-click="goTo($event)">
+					<img src="img/menu/movil/galeria.png">
+					Participantes
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<a href="#premios" ng-click="goTo($event)">
+					<img src="img/menu/movil/premios.png">
+					Premios
+				</a>
+			</div>
+			<div class="col-xs-6">
+				<a href="#ganadores" ng-click="goTo($event)">
+					<img src="img/menu/movil/ganadores.png">
+					Ganadores
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<a href="#kit" ng-click="goTo($event)">
+					<img src="img/menu/movil/kit.png">
+					Kit del Hincha
+				</a>
+			</div>
+			<div class="col-xs-6">
+				<div class="login" ng-show="!userData">
+					<a href="#home" ng-click="goTo($event)">
+						<img src="img/menu/movil/user.png">
+						Iniciar sesión
+					</a>
+				</div>
+				<div class="data" ng-show="userData">
+					<a href="#" ng-click="logout();">
+						<img ng-src="//graph.facebook.com/{{userData.fb_id}}/picture?type=square" class="user">
+						Cerrar Sesión
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="redes text-center">
+		<a href="/"><img src="img/menu/movil/facebook.png"></a>
+		<a href="/"><img src="img/menu/movil/twitter.png"></a>
+		<a href="/"><img src="img/menu/movil/youtube.png"></a>
+	</div>
 </div>

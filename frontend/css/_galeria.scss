@@ -5,6 +5,12 @@
 	padding-bottom: 100px;
 	color: $color-white;
 
+	@media screen and (max-width: $screen-xs) {
+		.title {
+			margin-bottom: 30px;
+		}
+	}
+
 	.container {
 
 		.list {
@@ -12,6 +18,11 @@
 				margin-top: 60px;
 				padding-bottom: 70px;
 				position: relative;
+
+				@media screen and (max-width: $screen-xs) {
+					padding-bottom: 0px;
+					margin-top: 0px;
+				}
 
 				&:before {
 					display: block;
@@ -21,6 +32,10 @@
 					width: 100%;
 					text-align: center;
 					content: url(../img/galeria/separador.png);
+
+					@media screen and (max-width: $screen-xs) {
+						display: none;
+					}
 				}
 
 				&:last-child:before {
@@ -95,6 +110,24 @@
 							}
 						}
 					}
+
+					@media screen and (max-width: $screen-xs) {
+						margin-top: 30px;
+						padding-bottom: 30px;
+						position: relative;
+
+						&:before {
+							content: '';
+							display: block;
+							position: absolute;
+							left: 0;
+							bottom: 0;
+							background: url(../img/galeria/movil/separador.png);
+							width: 100%;
+							height: 5px;
+							background-size: 100%;
+						}
+					}
 				}
 			}
 		}
@@ -104,6 +137,10 @@
 
 			img {
 				max-width: 66px;
+			}
+
+			@media screen and (max-width: $screen-xs) {
+				margin-top: 35px;
 			}
 		}
 	}
