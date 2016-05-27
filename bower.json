@@ -24,7 +24,9 @@
     "animate.css": "*",
     "font-awesome": "~4.3.0",
     "ng-backstretch": "*",
-    "angular-easyfb": "*"
+    "angular-easyfb": "*",
+    "msr": "*",
+    "howler": "2.0.0-beta13"
   },
   "devDependencies": {},
   "resolutions": {

@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use GuzzleHttp;
 use App\Models\User;
+use App\Models\Record;
 use \Firebase\JWT\JWT;
 
 class UserController extends Controller {
@@ -67,4 +68,36 @@ class UserController extends Controller {
 		$data = User::where('id', $request["user"])->first();
         return response()->json($data);
 	}
+
+    public function upload(Request $request) {
+        $file = $request->file('audio-blob');
+        $name = 'user-' . $request['user'] . '-' . $request->get('audio-filename');
+        if ($file) {
+            $destino = __DIR__ . '/../../../../frontend/uploads';
+            try {
+                $file->move($destino, $name);
+                return response()->json(['msg' => 'Guardado OK', 'url' => '/uploads/' . $name]);
+            } catch (Exception $e) {
+                return response()->json(['msg' => 'Error al mover', 'catch' => $e->getMessage()], 409);
+            }
+            
+
+        } else {
+            return response()->json(['msg' => 'Datos incorrectos'], 409);
+        }
+    }
+
+    public function newRecord(Request $request) {
+        $src = $request->get('src');
+
+        $record = new Record();
+
+        $record->user_id = $request['user'];
+        $record->audio = $src;
+        $record->active = true; // cambiar cuando esté el panel
+
+        $record->save();
+
+        return response()->json($record);
+    }
 }

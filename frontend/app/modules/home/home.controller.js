@@ -1,9 +1,13 @@
-piluchoApp.controller("homeController", function ($scope, User) {
+piluchoApp.controller("homeController", function ($scope, User, $rootScope) {
 	$scope.login = function() {
 		$scope.loader = true;
 		User.login(function() {
 			$scope.loader = false;
 		});
+	}
+
+	$scope.grabar = function() {
+		$rootScope.userRecord = true;
 	}
 
 	$scope.loader = true;

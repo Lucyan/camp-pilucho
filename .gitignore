@@ -3,6 +3,7 @@
 /node_modules
 /bower_components
 /frontend/lib
+/frontend/uploads
 /vendor
 /lumen.log
 

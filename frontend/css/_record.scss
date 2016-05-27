@@ -1,0 +1,159 @@
+#record {
+	display: block;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: url(../img/velo.png);
+	z-index: 2000;
+
+	.wrapper {
+		max-width: 610px;
+		position: relative;
+		margin: 8% auto 0;
+
+		&:before {
+			display: block;
+			content: '';
+			padding-top: 65.5%;
+		}
+
+
+		.content {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: $color-red;
+			border: 1px solid $color-white;
+			@include cross-browser(border-radius, 5px);
+			padding: 10px;
+
+			img.btn-close {
+				position: absolute;
+				top: -13px;
+    			right: -17px;
+				cursor: pointer;
+				width: 46px;
+				@include cross-browser(transform, scale(1));
+				@include cross-browser(transition, transform linear .1s);
+
+				&:hover {
+					@include cross-browser(transform, scale(1.15));
+				}
+
+				&:active, &:focus {
+					@include cross-browser(transform, scale(1));
+				}
+			}
+
+			.title {
+				margin-bottom: 35px;
+			}
+
+			.pilucho-wrapper {
+				max-width: 282px;
+				width: 100%;
+				position: relative;
+				margin: 0 auto 10px;
+
+				&:before {
+					display: block;
+					content: '';
+					padding-top: 100%;
+				}
+
+				.pilucho-content {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: url(../img/record/desktop/pilucho.png);
+					background-size: 100% 100%;
+
+					img.play {
+						width: 70px;
+						margin-top: 37%;
+						cursor: pointer;
+
+						@include cross-browser(transform, scale(1));
+						@include cross-browser(transition, transform linear .1s);
+
+						&:hover {
+							@include cross-browser(transform, scale(1.15));
+						}
+
+						&:active, &:focus {
+							@include cross-browser(transform, scale(1));
+						}
+					}
+				}
+			}
+
+			.tiempo, p {
+				color: $color-white;
+				font-size: 12px;
+			}
+
+			.controles {
+				color: $color-white;
+				font-size: 12px;
+
+				.grabar {
+					margin-bottom: 25px;
+					margin-top: 30px;
+				}
+
+				.btn-stop {
+					height: 85px;
+					display: inline-block;
+					background: url(../img/record/desktop/btn-stop.png);
+
+					.contador {
+						font-size: 25px;
+						margin-top: 25px;
+					}
+				}
+
+				img, .btn-stop {
+					width: 85px;
+					cursor: pointer;
+
+					@include cross-browser(transform, scale(1));
+					@include cross-browser(transition, transform linear .1s);
+
+					&:hover {
+						@include cross-browser(transform, scale(1.15));
+					}
+
+					&:active, &:focus {
+						@include cross-browser(transform, scale(1));
+					}
+
+					&.loader {
+						cursor: default;
+
+						&:hover {
+							@include cross-browser(transform, scale(1));
+						}
+					}
+				}
+
+				.disabled {
+					opacity: .3;
+
+					img {
+						cursor: default;
+
+						&:hover {
+							@include cross-browser(transform, scale(1));
+						}
+					}
+				}
+			}
+		}
+	}
+}

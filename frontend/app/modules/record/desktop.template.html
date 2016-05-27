@@ -1,0 +1,38 @@
+<div class="wrapper">
+	<div class="content">
+		<img src="img/record/desktop/close.png" class="btn-close" ng-click="close();">
+		<img src="img/record/desktop/title.png" class="title">
+		<div class="row">
+			<div class="col-sm-7">
+				<div class="pilucho-wrapper">
+					<div class="pilucho-content">
+						<img src="img/record/desktop/btn-play.png" ng-show="!onPlay && onData && !onRecord" ng-Click="play()" class="play">
+					</div>
+				</div>
+				<div class="tiempo">
+					{{timePlayback}}
+				</div>
+			</div>
+			<div class="col-sm-5">
+				<p>
+					Graba tu audio alentando a Chile (15 segundos max.) y participa por increíbles premios.
+				</p>
+				<div class="controles">
+					<div class="grabar" ng-class="{disabled: onPlay}">
+						<img src="img/record/desktop/loader.svg" class="loader" ng-show="onUpoad">
+						<img src="img/record/desktop/btn-record.png" ng-click="record()" ng-show="!onRecord && !onUpoad">
+						<div class="btn-stop" ng-click="stop()" ng-show="onRecord && !onUpoad">
+							<div class="contador">{{recorCount}}</div>
+						</div>
+						<div>Grabar</div>
+					</div>
+					<div class="guardar" ng-class="{disabled: !onData}">
+						<img src="img/record/desktop/loader.svg" class="loader" ng-show="onSave">
+						<img src="img/record/desktop/btn-enviar.png" ng-click="saveRecord();" ng-show="!onSave">
+						<div>Guardar</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

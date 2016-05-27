@@ -27,4 +27,16 @@ $app->group(["prefix" => "user", "namespace" => "App\Http\Controllers"], functio
 		'middleware' => 'auth',
 		'uses' => 'UserController@me'
 	]);
+
+	$app->post('upload', [
+		'as' => 'userUpload',
+		'middleware' => 'auth',
+		'uses' => 'UserController@upload'
+	]);
+
+	$app->post('newrecord', [
+		'as' => 'userNewRecord',
+		'middleware' => 'auth',
+		'uses' => 'UserController@newRecord'
+	]);
 });

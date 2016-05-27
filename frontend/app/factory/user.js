@@ -68,6 +68,21 @@ piluchoApp.factory("User", function ($http, ezfb, $rootScope){
 			} else {
 				if (callback) callback(false);
 			}
+		},
+
+		saveAudio: function(data, callback) {
+			$http.post(baseAPI + 'upload', data, {
+				transformRequest: angular.identity,
+            	headers: {'Content-Type': undefined}
+			}).then(function(resp) {
+				if (callback) callback(resp.data);
+			});
+		},
+
+		saveRecord: function(src, callback) {
+			$http.post(baseAPI + 'newrecord', { src: src }).then(function(resp) {
+				if (callback) callback(resp.data);
+			});
 		}
 	}
 	return interfaz;

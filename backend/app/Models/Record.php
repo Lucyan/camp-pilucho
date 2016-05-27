@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 final class Record extends Model
 {
+	protected $table = 'recordings';
 
     public function users()
     {

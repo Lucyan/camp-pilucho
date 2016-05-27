@@ -9,9 +9,7 @@
 
 	&.scroll {
 		background-color: $color-black-red;
-		-webkit-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.48);
-		-moz-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.48);
-		box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.48);
+		@include cross-browser(box-shadow, 0px 0px 11px 1px rgba(0,0,0,0.48));
 	}
 
 	ul {
@@ -83,6 +81,7 @@
 
 						&:hover .menu {
 							max-height: 40px;
+							@include cross-browser(box-shadow, 0px 0px 11px 1px rgba(0,0,0,0.48));
 						}
 					}
 				}

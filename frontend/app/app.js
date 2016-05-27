@@ -8,4 +8,5 @@ var piluchoApp = angular.module("piluchoApp",["ngRoute", "ui.bootstrap", "ng-bac
 
 piluchoApp.controller('mainController', ['$rootScope', function ($rootScope) {
 	$rootScope.userLogin = false;
+	$rootScope.userRecord = false;
 }]);
