@@ -3,17 +3,10 @@ piluchoApp.controller("recordDektopController", function ($scope, User, $rootSco
 		audio: true
 	};
 
-	$scope.mediaRecorder = false;
-	$scope.onRecord = false;
-	$scope.onData = false;
-	$scope.onPlay = false;
-	$scope.sound = false;
-	$scope.onUpoad = false;
-	$scope.onSave = false;
-	$scope.timePlayback = 0;
-	$scope.recorCount = 0;
 	var audioSRC = null;
 	var playBackTimeID = null;
+
+	restart();
 
 	navigator.getUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
 
@@ -109,14 +102,35 @@ piluchoApp.controller("recordDektopController", function ($scope, User, $rootSco
 
 	$scope.close = function() {
 		$rootScope.userRecord = false;
+		restart();
 	}
 
 	$scope.saveRecord = function() {
 		$scope.onSave = true;
 		if ($scope.onData && !$scope.onRecord && audioSRC) {
 			User.saveRecord(audioSRC, function(resp) {
-				//$scope.onSave = false;
+				$scope.showFinal = true;
 			});
+		}
+	}
+
+	function restart() {
+		$scope.mediaRecorder = false;
+		$scope.onRecord = false;
+		$scope.onData = false;
+		$scope.onPlay = false;
+		$scope.onUpoad = false;
+		$scope.onSave = false;
+		$scope.timePlayback = 0;
+		$scope.recorCount = 0;
+		$scope.showFinal = false;
+
+		audioSRC = null;
+		playBackTimeID = null;
+		
+		if ($scope.sound) {
+			$scope.sound.unload();
+			$scope.sound = null;
 		}
 	}
 });

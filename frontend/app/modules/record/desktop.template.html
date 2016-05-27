@@ -1,37 +1,55 @@
 <div class="wrapper">
 	<div class="content">
 		<img src="img/record/desktop/close.png" class="btn-close" ng-click="close();">
-		<img src="img/record/desktop/title.png" class="title">
-		<div class="row">
-			<div class="col-sm-7">
-				<div class="pilucho-wrapper">
-					<div class="pilucho-content">
-						<img src="img/record/desktop/btn-play.png" ng-show="!onPlay && onData && !onRecord" ng-Click="play()" class="play">
+		<div ng-show="!showFinal">
+			<img src="img/record/desktop/title.png" class="title">
+			<div class="row">
+				<div class="col-sm-7">
+					<div class="pilucho-wrapper">
+						<div class="pilucho-content">
+							<img src="img/record/desktop/btn-play.png" ng-show="!onPlay && onData && !onRecord" ng-Click="play()" class="play">
+						</div>
+					</div>
+					<div class="tiempo">
+						{{timePlayback}}
 					</div>
 				</div>
-				<div class="tiempo">
-					{{timePlayback}}
+				<div class="col-sm-5">
+					<p>
+						Graba tu audio alentando a Chile (15 segundos max.) y participa por increíbles premios.
+					</p>
+					<div class="controles">
+						<div class="grabar" ng-class="{disabled: onPlay}">
+							<img src="img/record/desktop/loader.svg" class="loader" ng-show="onUpoad">
+							<img src="img/record/desktop/btn-record.png" ng-click="record()" ng-show="!onRecord && !onUpoad">
+							<div class="btn-stop" ng-click="stop()" ng-show="onRecord && !onUpoad">
+								<div class="contador">{{recorCount}}</div>
+							</div>
+							<div>Grabar</div>
+						</div>
+						<div class="guardar" ng-class="{disabled: !onData}">
+							<img src="img/record/desktop/loader.svg" class="loader" ng-show="onSave">
+							<img src="img/record/desktop/btn-enviar.png" ng-click="saveRecord();" ng-show="!onSave">
+							<div>Guardar</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="col-sm-5">
-				<p>
-					Graba tu audio alentando a Chile (15 segundos max.) y participa por increíbles premios.
-				</p>
-				<div class="controles">
-					<div class="grabar" ng-class="{disabled: onPlay}">
-						<img src="img/record/desktop/loader.svg" class="loader" ng-show="onUpoad">
-						<img src="img/record/desktop/btn-record.png" ng-click="record()" ng-show="!onRecord && !onUpoad">
-						<div class="btn-stop" ng-click="stop()" ng-show="onRecord && !onUpoad">
-							<div class="contador">{{recorCount}}</div>
-						</div>
-						<div>Grabar</div>
-					</div>
-					<div class="guardar" ng-class="{disabled: !onData}">
-						<img src="img/record/desktop/loader.svg" class="loader" ng-show="onSave">
-						<img src="img/record/desktop/btn-enviar.png" ng-click="saveRecord();" ng-show="!onSave">
-						<div>Guardar</div>
-					</div>
-				</div>
+		</div>
+		<div ng-show="showFinal" class="final">
+			<img src="img/record/final/logo.png">
+			<p class="mas">
+				Gracias por alentar a Chile. Tu arenga ahora está en estado de revisión.
+			</p>
+			<p>
+				Una ves publicado estaras participando por uno de los increíbles premios de Campanario.
+			</p>
+
+			<div class="share">
+				<span>Comparte con tus amigos</span>
+				<a href="/" target="_blank"><img src="img/record/final/facebook.png"></a>
+				<a href="/" target="_blank"><img src="img/record/final/twitter.png"></a>
+				<a href="/" target="_blank"><img src="img/record/final/link.png"></a>
 			</div>
 		</div>
 	</div>
