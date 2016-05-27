@@ -110,6 +110,7 @@ piluchoApp.controller("recordDektopController", function ($scope, User, $rootSco
 		$scope.onSave = true;
 		if ($scope.onData && !$scope.onRecord && audioSRC) {
 			User.saveRecord(audioSRC, function(resp) {
+				$scope.movilClose = 'Cerrar';
 				$scope.showFinal = true;
 			});
 		}
@@ -132,5 +133,7 @@ piluchoApp.controller("recordDektopController", function ($scope, User, $rootSco
 			$scope.sound.unload();
 			$scope.sound = null;
 		}
+
+		$scope.movilClose = 'Cancelar';
 	}
 });

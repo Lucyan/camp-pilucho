@@ -1,12 +1,16 @@
 <div class="wrapper">
 	<div class="content">
-		<img src="img/record/desktop/close.png" class="btn-close" ng-click="close();">
+		<img src="img/record/desktop/close.png" class="btn-close hidden-xs" ng-click="close();">
+		<div class="movil-close" ng-click="close();">{{movilClose}}</div>
 		<div ng-show="!showFinal">
 			<img src="img/record/desktop/title.png" class="title">
 			<div class="row">
-				<div class="col-sm-7">
+				<div class="col-sm-7 movil-ajust">
 					<div class="pilucho-wrapper">
 						<div class="pilucho-content">
+							<div class="movil-text" ng-show="!onData">
+								Graba tu audio alentando a Chile (15 segundos max.) y participa por increíbles premios.
+							</div>
 							<img src="img/record/desktop/btn-play.png" ng-show="!onPlay && onData && !onRecord" ng-Click="play()" class="play">
 						</div>
 					</div>
@@ -14,8 +18,8 @@
 						{{timePlayback}}
 					</div>
 				</div>
-				<div class="col-sm-5">
-					<p>
+				<div class="col-sm-5 movil-ajust">
+					<p class="hidden-xs">
 						Graba tu audio alentando a Chile (15 segundos max.) y participa por increíbles premios.
 					</p>
 					<div class="controles">

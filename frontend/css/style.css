@@ -202,6 +202,14 @@ body {
       display: block;
       content: '';
       padding-top: 65.5%; }
+    @media screen and (max-width: 580px) {
+      #record .wrapper {
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        margin: 0px; }
+        #record .wrapper:before {
+          padding-top: 100%; } }
     #record .wrapper .content {
       position: absolute;
       top: 0;
@@ -244,6 +252,16 @@ body {
           -moz-transform: scale(1);
           -webkit-transform: scale(1);
           transform: scale(1); }
+      #record .wrapper .content .movil-close {
+        font-size: 16px;
+        padding: 13px 10px;
+        position: absolute;
+        color: #fff;
+        top: 0;
+        left: 0; }
+        @media screen and (min-width: 580px) {
+          #record .wrapper .content .movil-close {
+            display: none; } }
       #record .wrapper .content .title {
         margin-bottom: 35px; }
       #record .wrapper .content .pilucho-wrapper {
@@ -289,6 +307,17 @@ body {
               -moz-transform: scale(1);
               -webkit-transform: scale(1);
               transform: scale(1); }
+          #record .wrapper .content .pilucho-wrapper .pilucho-content .movil-text {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            color: #fff;
+            font-size: 15px;
+            background-color: #0978BE;
+            padding: 10px 30px; }
+            @media screen and (min-width: 580px) {
+              #record .wrapper .content .pilucho-wrapper .pilucho-content .movil-text {
+                display: none !important; } }
       #record .wrapper .content .tiempo, #record .wrapper .content p {
         color: #fff;
         font-size: 12px; }
@@ -348,6 +377,10 @@ body {
               -moz-transform: scale(1);
               -webkit-transform: scale(1);
               transform: scale(1); }
+        @media screen and (max-width: 580px) {
+          #record .wrapper .content .controles > div {
+            display: inline-block;
+            margin: 0 20px; } }
       #record .wrapper .content .final {
         padding-top: 40px; }
         #record .wrapper .content .final p {
@@ -358,6 +391,36 @@ body {
         #record .wrapper .content .final .share {
           color: #fff;
           margin-top: 50px; }
+        @media screen and (max-width: 580px) {
+          #record .wrapper .content .final {
+            padding-top: 50px; }
+            #record .wrapper .content .final p {
+              margin: 10px 0px 0;
+              font-size: 18px; }
+              #record .wrapper .content .final p.mas {
+                margin-top: 60px; }
+            #record .wrapper .content .final .share span {
+              display: block;
+              width: 100%;
+              text-align: center;
+              margin-bottom: 15px; }
+            #record .wrapper .content .final .share a {
+              margin: 0 10px; } }
+      @media screen and (max-width: 580px) {
+        #record .wrapper .content {
+          border: none;
+          -ms-border-radius: 0;
+          -o-border-radius: 0;
+          -moz-border-radius: 0;
+          -webkit-border-radius: 0;
+          border-radius: 0; }
+          #record .wrapper .content .movil-ajust {
+            padding-left: 0px;
+            padding-right: 0px; }
+            #record .wrapper .content .movil-ajust .pilucho-wrapper {
+              max-width: initial; }
+          #record .wrapper .content .title {
+            margin-bottom: 20px; } }
 
 #home {
   position: relative;
