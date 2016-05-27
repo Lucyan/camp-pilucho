@@ -247,13 +247,29 @@ body {
   #agegate .container {
     margin-top: 10%; }
     #agegate .container .title {
-      margin-bottom: 40px; }
+      margin-bottom: 40px;
+      max-width: 100%; }
     #agegate .container p {
       color: #E2383C;
       margin-bottom: 30px;
       font-size: 18px; }
     #agegate .container button {
       margin: 0 10px; }
+    @media screen and (max-width: 580px) {
+      #agegate .container {
+        position: absolute;
+        bottom: 0px;
+        background: url(../img/home/movil/pilucho.png);
+        background-size: 100% auto;
+        height: 510px;
+        max-height: 100%;
+        padding-top: 190px; }
+        #agegate .container .title {
+          margin-bottom: 0px; }
+        #agegate .container p {
+          margin-bottom: 20px; }
+        #agegate .container button {
+          margin: 10px 0; } }
 
 #record {
   display: block;
@@ -522,7 +538,7 @@ body {
         background: url(../img/home/movil/pilucho.png);
         width: 100%;
         height: 466px;
-        background-size: 100% 100%;
+        background-size: 100% auto;
         padding-top: 175px; }
         #home .conectar p {
           color: #E2383C;
