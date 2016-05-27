@@ -118,6 +118,10 @@
 		cursor: pointer;
 		width: 34px;
 		z-index: 1030;
+
+		@media screen and (min-width: $screen-xs) {
+			display: none;
+		}
 	}
 
 	.menu-movil-content {

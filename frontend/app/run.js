@@ -4,4 +4,10 @@ piluchoApp.run(function (User){
 			User.fetch();
 		}
 	});
+
+	Dancer.setOptions({
+		flashJS  : 'lib/lialosiu-dancer/lib/soundmanager2.js',
+		flashSWF : 'lib/lialosiu-dancer/lib/soundmanager2.swf'
+	});
+
 });

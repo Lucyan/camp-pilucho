@@ -1,0 +1,26 @@
+#agegate {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 3000;
+
+	.container {
+		margin-top: 10%;
+
+		.title {
+			margin-bottom: 40px;
+		}
+
+		p {
+			color: $color-red;
+			margin-bottom: 30px;
+			font-size: 18px;
+		}
+
+		button {
+			margin: 0 10px;
+		}
+	}
+}

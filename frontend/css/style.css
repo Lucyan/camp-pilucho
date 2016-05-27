@@ -194,6 +194,9 @@ body {
     cursor: pointer;
     width: 34px;
     z-index: 1030; }
+    @media screen and (min-width: 580px) {
+      #main-menu .menu-movil {
+        display: none; } }
   #main-menu .menu-movil-content {
     position: fixed;
     top: 0;
@@ -233,6 +236,24 @@ body {
       left: 0; }
       #main-menu .menu-movil-content .redes a {
         margin: 0 10px; }
+
+#agegate {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3000; }
+  #agegate .container {
+    margin-top: 10%; }
+    #agegate .container .title {
+      margin-bottom: 40px; }
+    #agegate .container p {
+      color: #E2383C;
+      margin-bottom: 30px;
+      font-size: 18px; }
+    #agegate .container button {
+      margin: 0 10px; }
 
 #record {
   display: block;
@@ -578,6 +599,22 @@ body {
           cursor: pointer; }
           #galeria .container .list .row .block .player .content img.play.playing {
             display: none; }
+        #galeria .container .list .row .block .player .content .boca {
+          width: 60px;
+          height: 35.604px;
+          background: url(../img/boca.png);
+          background-position: 0 0;
+          background-size: 100% auto;
+          position: absolute;
+          top: 46%;
+          left: 0;
+          right: 0;
+          margin-left: auto;
+          margin-right: auto; }
+          #galeria .container .list .row .block .player .content .boca.middle {
+            background-position-y: 71.208px; }
+          #galeria .container .list .row .block .player .content .boca.open {
+            background-position-y: 35.604px; }
     #galeria .container .list .row .block .share {
       margin-top: 10px;
       margin-bottom: 15px; }

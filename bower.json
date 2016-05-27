@@ -26,7 +26,8 @@
     "angular-easyfb": "*",
     "msr": "*",
     "howler": "2.0.0-beta13",
-    "ng-device-detector": "*"
+    "ng-device-detector": "*",
+    "lialosiu-dancer": "*"
   },
   "devDependencies": {},
   "resolutions": {
