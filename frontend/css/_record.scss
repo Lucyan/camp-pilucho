@@ -128,6 +128,28 @@
 							display: none!important;
 						}
 					}
+
+					.boca {
+						width: 60px;
+						height: 35.604px;
+						background: url(../img/boca.png);
+						background-position: 0 0;
+						background-size: 100% auto;
+						position: absolute;
+						top: 44%;
+						left: 0;
+						right: 0;
+						margin-left: auto;
+						margin-right: auto;
+
+						&.middle {
+							background-position-y: 71.208px;
+						}
+
+						&.open {
+							background-position-y: 35.604px;
+						}
+					}
 				}
 			}
 

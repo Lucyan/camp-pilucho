@@ -388,6 +388,22 @@ body {
             @media screen and (min-width: 580px) {
               #record .wrapper .content .pilucho-wrapper .pilucho-content .movil-text {
                 display: none !important; } }
+          #record .wrapper .content .pilucho-wrapper .pilucho-content .boca {
+            width: 60px;
+            height: 35.604px;
+            background: url(../img/boca.png);
+            background-position: 0 0;
+            background-size: 100% auto;
+            position: absolute;
+            top: 44%;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto; }
+            #record .wrapper .content .pilucho-wrapper .pilucho-content .boca.middle {
+              background-position-y: 71.208px; }
+            #record .wrapper .content .pilucho-wrapper .pilucho-content .boca.open {
+              background-position-y: 35.604px; }
       #record .wrapper .content .tiempo, #record .wrapper .content p {
         color: #fff;
         font-size: 12px; }
@@ -606,7 +622,7 @@ body {
           background-position: 0 0;
           background-size: 100% auto;
           position: absolute;
-          top: 46%;
+          top: 51%;
           left: 0;
           right: 0;
           margin-left: auto;

@@ -27,6 +27,7 @@ piluchoApp.controller("recordDektopController", function ($scope, User, $rootSco
 	    	formData.append(fileType + '-blob', blob);
 
 	    	User.saveAudio(formData, function(resp) {
+	    		$scope.backSRC = resp.url;
 	    		$scope.setAudioPlay(resp.url)
 	    		audioSRC = resp.url;
 	    		$scope.onData = true;
@@ -60,30 +61,71 @@ piluchoApp.controller("recordDektopController", function ($scope, User, $rootSco
 		}
 	}
 
-	$scope.setAudioPlay = function(src) {
-		if ($scope.sound) $scope.sound.unload();
+	var dancer = null;
 
-		$scope.sound = new Howl({
-			src: [src],
-			onend: function() {
-				$scope.onPlay = false;
-				$scope.clearPlayer();
-				$scope.$apply();
-			},
-			onload: function() {
-				$scope.$apply();
-			},
-			onplay: function() {
-				$scope.timePlayback = 0;
-				$scope.onPlay = true;
-				$scope.setPlayer();
-				$scope.$apply();
-			}
-		});
+	$scope.setAudioPlay = function(src) {
+		if (deviceDetector.isDesktop()) {
+			dancer = new Dancer();
+			dancer.load({src: src});
+
+			var max = 0;
+			var actualClase = '';
+
+			dancer.after(0.1, function() {
+				var frequency = this.getFrequency( 100 ) * 10000;
+				if (frequency > 0) {
+					$scope.timePlayback = Math.floor(dancer.getTime());
+					$scope.$apply()
+					frequency = Math.round(frequency);
+					if (max < frequency && frequency < 50) max = frequency;
+					var middle = max / 3;
+
+					var clase = '';
+					if (frequency > middle) {
+						clase = 'open';
+					}
+
+					if (actualClase != clase) {
+						$('#record .pilucho-content .boca').removeClass(actualClase).addClass(clase);
+						actualClase = clase;
+					}
+				} else {
+					dancer.pause();
+					$scope.onPlay = false;
+					$scope.$apply();
+					dancer.audioAdapter.context.close();
+				}
+			});
+		} else {
+			if ($scope.sound) $scope.sound.unload();
+
+			$scope.sound = new Howl({
+				src: [src],
+				onend: function() {
+					$scope.onPlay = false;
+					$scope.clearPlayer();
+					$scope.$apply();
+				},
+				onload: function() {
+					$scope.$apply();
+				},
+				onplay: function() {
+					$scope.timePlayback = 0;
+					$scope.onPlay = true;
+					$scope.setPlayer();
+					$scope.$apply();
+				}
+			});
+		}
 	}
 
 	$scope.play = function() {
-		if ($scope.sound) {
+		if (deviceDetector.isDesktop()) {
+			$scope.setAudioPlay($scope.backSRC);
+			$scope.timePlayback = 0;
+			$scope.onPlay = true;
+			dancer.play();
+		} else if ($scope.sound) {
 			$scope.sound.play();
 		}
 	}
