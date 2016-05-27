@@ -397,6 +397,13 @@ body {
       font-size: 14px;
       vertical-align: middle;
       margin-bottom: 10px; }
+      #galeria .container .list .row .block .user img {
+        max-width: 32px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -webkit-border-radius: 15px;
+        border-radius: 15px; }
     #galeria .container .list .row .block .player {
       position: relative; }
       #galeria .container .list .row .block .player:before {
@@ -419,7 +426,10 @@ body {
           left: 0;
           right: 0;
           margin-left: auto;
-          margin-right: auto; }
+          margin-right: auto;
+          cursor: pointer; }
+          #galeria .container .list .row .block .player .content img.play.playing {
+            display: none; }
     #galeria .container .list .row .block .share {
       margin-top: 10px;
       margin-bottom: 15px; }

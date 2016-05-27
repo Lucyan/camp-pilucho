@@ -33,6 +33,11 @@
 						font-size: 14px;
 						vertical-align: middle;
 						margin-bottom: 10px;
+
+						img {
+							max-width: 32px;
+							@include cross-browser(border-radius, 15px);
+						}
 					}
 
 					.player {
@@ -64,6 +69,11 @@
 								right: 0;
 								margin-left: auto;
 								margin-right: auto;
+								cursor: pointer;
+
+								&.playing {
+									display: none;
+								}
 							}
 						}
 					}

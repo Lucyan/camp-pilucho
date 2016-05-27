@@ -8,6 +8,7 @@ piluchoApp.controller("recordDektopController", function ($scope, User, $rootSco
 
 	restart();
 
+	$scope.mediaRecorder = false;
 	navigator.getUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
 
 	function onMediaSuccess(stream) {
@@ -115,7 +116,6 @@ piluchoApp.controller("recordDektopController", function ($scope, User, $rootSco
 	}
 
 	function restart() {
-		$scope.mediaRecorder = false;
 		$scope.onRecord = false;
 		$scope.onData = false;
 		$scope.onPlay = false;

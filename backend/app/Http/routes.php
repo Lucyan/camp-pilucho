@@ -40,3 +40,11 @@ $app->group(["prefix" => "user", "namespace" => "App\Http\Controllers"], functio
 		'uses' => 'UserController@newRecord'
 	]);
 });
+
+$app->group(["prefix" => "galeria", "namespace" => "App\Http\Controllers"], function ($app) {
+
+	$app->get('/', [
+		'as' => 'getGaleria',
+		'uses' => 'GaleriaController@get'
+	]);
+});

@@ -8,7 +8,7 @@ final class Record extends Model
 {
 	protected $table = 'recordings';
 
-    public function users()
+    public function user()
     {
         return $this->belongsTo('App\Models\User', 'user_id');
     }
