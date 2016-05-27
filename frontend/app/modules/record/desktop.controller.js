@@ -41,6 +41,10 @@ piluchoApp.controller("recordDektopController", function ($scope, User, $rootSco
 	}
 
 	$scope.record = function() {
+		if (deviceDetector.os == 'ios') {
+			$('#record .ios-form input').click();
+			return false;
+		}
 		if ($scope.mediaRecorder && !$scope.onPlay) {
 			$scope.mediaRecorder.start(15 * 1000);
 			$scope.recorCount = 0;

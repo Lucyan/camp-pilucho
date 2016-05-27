@@ -31,6 +31,9 @@
 								<div class="contador">{{recorCount}}</div>
 							</div>
 							<div>Grabar</div>
+							<form enctype="multipart/form-data" method="post" class="ios-form">
+								<input type="file" accept="video/*" name="video_file" />
+							</form>
 						</div>
 						<div class="guardar" ng-class="{disabled: !onData}">
 							<img src="img/record/desktop/loader.svg" class="loader" ng-show="onSave">

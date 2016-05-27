@@ -429,6 +429,8 @@ body {
         #record .wrapper .content .controles .grabar {
           margin-bottom: 25px;
           margin-top: 30px; }
+          #record .wrapper .content .controles .grabar .ios-form {
+            display: none; }
         #record .wrapper .content .controles .btn-stop {
           height: 85px;
           display: inline-block;
