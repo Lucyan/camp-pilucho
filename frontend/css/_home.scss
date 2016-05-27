@@ -3,11 +3,31 @@
 	display: block;
 	padding-top: 130px;
 
+	@media screen and (max-width: $screen-xs) {
+		padding-top: 30px;
+	}
+
 	.conectar {
 		margin-top: 40px;
 
+		@media screen and (max-width: $screen-xs) {
+			background: url(../img/home/movil/pilucho.png);
+			width: 100%;
+			height: 466px;
+			background-size: 100% 100%;
+			padding-top: 175px;
+
+			p {
+				color: $color-red;
+				max-width: 180px;
+				font-size: 15px;
+				margin: 0 auto;
+			}
+		}
+
 		.title {
 			margin-bottom: 30px;
+			max-width: 100%;
 		}
 
 		button.facebook {
@@ -17,6 +37,10 @@
 		.game {
 			button {
 				margin: 0 10px;
+
+				@media screen and (max-width: $screen-xs) {
+					margin-bottom: 10px;
+				}
 			}
 		}
 	}

@@ -7,6 +7,10 @@
 	padding: 15px 20px 10px;
 	@include cross-browser(transition, background-color linear .3s);
 
+	@media screen and (max-width: $screen-xs) {
+		text-align: center;
+	}
+
 	&.scroll {
 		background-color: $color-black-red;
 		@include cross-browser(box-shadow, 0px 0px 11px 1px rgba(0,0,0,0.48));

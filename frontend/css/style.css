@@ -76,6 +76,9 @@ body {
     -webkit-transform: scale(1);
     transform: scale(1);
     outline: none; }
+  @media screen and (max-width: 580px) {
+    .button, a.button {
+      width: 100%; } }
 
 #main-menu {
   position: fixed;
@@ -89,6 +92,9 @@ body {
   -moz-transition: background-color linear 0.3s;
   -webkit-transition: background-color linear 0.3s;
   transition: background-color linear 0.3s; }
+  @media screen and (max-width: 580px) {
+    #main-menu {
+      text-align: center; } }
   #main-menu.scroll {
     background-color: #AC2B3E;
     -ms-box-shadow: 0px 0px 11px 1px rgba(0, 0, 0, 0.48);
@@ -357,14 +363,33 @@ body {
   position: relative;
   display: block;
   padding-top: 130px; }
+  @media screen and (max-width: 580px) {
+    #home {
+      padding-top: 30px; } }
   #home .conectar {
     margin-top: 40px; }
+    @media screen and (max-width: 580px) {
+      #home .conectar {
+        background: url(../img/home/movil/pilucho.png);
+        width: 100%;
+        height: 466px;
+        background-size: 100% 100%;
+        padding-top: 175px; }
+        #home .conectar p {
+          color: #E2383C;
+          max-width: 180px;
+          font-size: 15px;
+          margin: 0 auto; } }
     #home .conectar .title {
-      margin-bottom: 30px; }
+      margin-bottom: 30px;
+      max-width: 100%; }
     #home .conectar button.facebook {
       margin-bottom: 20px; }
     #home .conectar .game button {
       margin: 0 10px; }
+      @media screen and (max-width: 580px) {
+        #home .conectar .game button {
+          margin-bottom: 10px; } }
   #home .footer {
     position: absolute;
     bottom: 0px;
