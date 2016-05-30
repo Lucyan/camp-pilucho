@@ -59,6 +59,34 @@ piluchoApp.controller("recordDektopController", function ($scope, User, $rootSco
 		}
 	}
 
+	$scope.iOSSaveFile = function() {
+		var oFile = document.getElementById('video_file').files[0];
+
+		// filter for image files
+		var rFilter = /^(image\/bmp|image\/gif|image\/jpeg|image\/png|image\/tiff)$/i;
+		if (rFilter.test(oFile.type)) {
+			alert('El archivo seleccionado no es un video');
+			return;
+		}
+
+		
+		
+		console.log('file', oFile); return false;
+
+
+		$scope.onUpoad = true;
+
+		var formData = new FormData($('#record .ios-form')[0]);
+
+		User.saveAudio(formData, function(resp) {
+    		$scope.backSRC = resp.url;
+    		$scope.setAudioPlay(resp.url)
+    		audioSRC = resp.url;
+    		$scope.onData = true;
+    		$scope.onUpoad = false;
+    	});
+	}
+
 	$scope.stop = function() {
 		if ($scope.mediaRecorder) {
 			$scope.mediaRecorder.stop();
