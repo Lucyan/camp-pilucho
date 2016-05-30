@@ -129,7 +129,7 @@ class UserController extends Controller {
 
         $record->user_id = $request['user'];
         $record->audio = $src;
-        $record->active = true; // cambiar cuando esté el panel
+        $record->active = false;
 
         $record->save();
 

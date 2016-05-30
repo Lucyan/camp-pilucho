@@ -3,8 +3,9 @@
 use \Firebase\JWT\JWT;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
+use App\Models\User;
 
-class AuthMiddleware {
+class AdminMiddleware {
 
 	/**
 	* The Guard implementation.
@@ -45,7 +46,12 @@ class AuthMiddleware {
 				return response()->json(['message' => 'Token has expired']);
 			}
 
-			$request['user'] = $payload["user"];
+			$user = User::find($payload["user"]);
+
+			if ($user->is_admin)
+				$request['user'] = $payload["user"];
+			else
+				return response()->json(['message' => 'You shall not pass!!!'], 401); 
 
 			return $next($request);
 		}

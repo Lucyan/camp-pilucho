@@ -48,3 +48,18 @@ $app->group(["prefix" => "galeria", "namespace" => "App\Http\Controllers"], func
 		'uses' => 'GaleriaController@get'
 	]);
 });
+
+$app->group(["prefix" => "admin", "namespace" => "App\Http\Controllers"], function ($app) {
+
+	$app->get('/galeria', [
+		'as' => 'asdminGetGaleria',
+		'middleware' => 'admin',
+		'uses' => 'GaleriaController@adminGet'
+	]);
+
+	$app->post('/toogleactive', [
+		'as' => 'toogleActive',
+		'middleware' => 'admin',
+		'uses' => 'GaleriaController@toogleActive'
+	]);
+});

@@ -35,4 +35,27 @@ class GaleriaController extends Controller {
 
         return response()->json($resp);
     }
+
+    public function adminGet(Request $request) {
+        $page = $request->get('page');
+        $limit = 10;
+        $list = Record::select('recordings.id', 'recordings.audio', 'recordings.created_at', 'users.name', 'users.fb_id', 'users.email', 'recordings.active')
+            ->orderBy('recordings.id', 'desc')
+            ->take($limit)
+            ->skip($page * $limit)
+            ->join('users', 'recordings.user_id', '=', 'users.id')
+            ->get();
+
+        return response()->json($list);
+    }
+
+    public function toogleActive(Request $request) {
+        $id = $request->get('id');
+
+        $record = Record::where('id', $id)->first();
+        $record->active = ($record->active) ? false : true;
+        $record->save();
+
+        return response()->json(['active' => $record->active]);
+    }
 }

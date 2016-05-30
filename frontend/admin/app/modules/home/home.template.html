@@ -1,0 +1,41 @@
+<div class="ui segment" ng-show="openview">
+	<h1 class="ui header">Admin Galería</h2>
+	<div class="ui divider"></div>
+	<table class="ui celled structured table">
+		<thead>
+			<tr>
+				<th>Usuario</th>
+				<th>Audio</th>
+				<th>Fecha Subida</th>
+				<th>Aprobado</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="record in galleryList track by $index">
+				<td class="collapsing">
+					<h4 class="ui image header">
+						<img ng-src="//graph.facebook.com/{{record.fb_id}}/picture?type=square" class="ui mini rounded image">
+						<div class="content">
+							{{record.name}}
+							<div class="sub header">{{record.email}}</div>
+						</div>
+					</h4>
+				</td>
+				<td class="collapsing">
+					<audio controls>
+						<source ng-src="{{record.audio}}" type="audio/wav">
+					</audio>
+				</td>
+				<td class="collapsing">{{record.created_at}}</td>
+				<td class="collapsing">
+					<div class="ui toggle checkbox">
+						<input type="checkbox" ng-checked="record.active" ng-model="checkbox[$index]" ng-change="toggleActive($index);"> <label></label>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="ui text-center">
+		<button class="ui primary button" ng-click="cargarMas();" ng-show="haymas">Cargar Más</button>
+	</div>
+</div>
