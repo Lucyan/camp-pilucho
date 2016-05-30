@@ -78,8 +78,8 @@
   <!-- / ng-device-detector -->
 
   <!-- Angulartics + Google Analytics -->
-  <!-- <script src="lib/angulartics/dist/angulartics.min.js"></script>
-  <script src="lib/angulartics/dist/angulartics-ga.min.js"></script> -->
+  <script src="lib/angulartics/dist/angulartics.min.js"></script>
+  <script src="lib/angulartics-google-analytics/dist/angulartics-google-analytics.min.js"></script>
   <!-- / Angulartics + Google Analytics -->
 
   <!-- ngProgress -->
@@ -111,5 +111,13 @@
     <!-- / Factories -->
 
   <!-- / Application -->
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-49332307-10', 'auto');
+  </script>
 
 </html>
