@@ -25,7 +25,8 @@
 					</p>
 					<div class="controles">
 						<div class="grabar" ng-class="{disabled: onPlay}">
-							<img src="img/record/desktop/loader.svg" class="loader" ng-show="onUpoad">
+							<img src="img/record/desktop/loader.svg" class="loader hidden-xs" ng-show="onUpoad">
+							<img src="img/record/desktop/movil/loader.svg" class="loader movil" ng-show="onUpoad">
 							<img src="img/record/desktop/btn-record.png" ng-click="record()" ng-show="!onRecord && !onUpoad">
 							<div class="btn-stop" ng-click="stop()" ng-show="onRecord && !onUpoad">
 								<div class="contador">{{recorCount}}</div>

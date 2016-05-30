@@ -205,6 +205,12 @@
 						&:hover {
 							@include cross-browser(transform, scale(1));
 						}
+
+						@media screen and (min-width: $screen-xs) {
+							&.movil {
+								display: none;
+							}
+						}
 					}
 				}
 
@@ -299,6 +305,10 @@
 
 						.grabar {
 							color: $color-red;
+
+							.btn-stop .contador {
+								color: $color-white;
+							}
 						}
 
 						.guardar {
@@ -309,6 +319,11 @@
 
 				.title {
 					margin-bottom: 20px;
+				}
+
+				.controles .grabar {
+					margin-bottom: 10px;
+					margin-top: 15px;
 				}
 			}
 		}

@@ -47,13 +47,13 @@ piluchoApp.controller("recordDektopController", function ($scope, User, $rootSco
 		}
 		if ($scope.mediaRecorder && !$scope.onPlay) {
 			$scope.mediaRecorder.start(15 * 1000);
-			$scope.recorCount = 0;
+			$scope.recorCount = 15;
 			$scope.onRecord = true;
 			$scope.onData = false;
 			$scope.onPlay = false;
 			if (playBackTimeID != null) clearInterval(playBackTimeID);
 			playBackTimeID = setInterval(function() {
-				$scope.recorCount++;
+				$scope.recorCount--;
 				$scope.$apply();
 			}, 1000);
 		}
@@ -202,7 +202,7 @@ piluchoApp.controller("recordDektopController", function ($scope, User, $rootSco
 		$scope.onUpoad = false;
 		$scope.onSave = false;
 		$scope.timePlayback = 0;
-		$scope.recorCount = 0;
+		$scope.recorCount = 15;
 		$scope.showFinal = false;
 
 		audioSRC = null;

@@ -473,6 +473,9 @@ body {
               -moz-transform: scale(1);
               -webkit-transform: scale(1);
               transform: scale(1); }
+            @media screen and (min-width: 580px) {
+              #record .wrapper .content .controles img.loader.movil, #record .wrapper .content .controles .btn-stop.loader.movil {
+                display: none; } }
         #record .wrapper .content .controles .disabled {
           opacity: .3; }
           #record .wrapper .content .controles .disabled img {
@@ -537,10 +540,15 @@ body {
               bottom: 0px; }
               #record .wrapper .content .movil-ajust.cont .grabar {
                 color: #E2383C; }
+                #record .wrapper .content .movil-ajust.cont .grabar .btn-stop .contador {
+                  color: #fff; }
               #record .wrapper .content .movil-ajust.cont .guardar {
                 color: #0978BE; }
           #record .wrapper .content .title {
-            margin-bottom: 20px; } }
+            margin-bottom: 20px; }
+          #record .wrapper .content .controles .grabar {
+            margin-bottom: 10px;
+            margin-top: 15px; } }
 
 #home {
   position: relative;
