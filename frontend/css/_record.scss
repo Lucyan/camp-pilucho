@@ -274,7 +274,14 @@
 
 			@media screen and (max-width: $screen-xs) {
 				border: none;
+				padding-left: 0px;
+				padding-right: 0px;
 				@include cross-browser(border-radius, 0);
+
+				.row {
+					margin-left: 0px;
+					margin-right: 0px;
+				}
 
 				.movil-ajust {
 					padding-left: 0px;
@@ -282,6 +289,21 @@
 
 					.pilucho-wrapper {
 						max-width: initial;
+					}
+
+					&.cont {
+						position: absolute;
+						width: 100%;
+						background-color: $color-white;
+						bottom: 0px;
+
+						.grabar {
+							color: $color-red;
+						}
+
+						.guardar {
+							color: $color-blue;
+						}
 					}
 				}
 
