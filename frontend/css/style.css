@@ -62,23 +62,24 @@ body {
     background-color: #3E549C;
     border: none;
     font-family: 'futuramedium'; }
-  .button:hover, a.button:hover {
-    -ms-transform: scale(1.15);
-    -o-transform: scale(1.15);
-    -moz-transform: scale(1.15);
-    -webkit-transform: scale(1.15);
-    transform: scale(1.15);
-    outline: none; }
-  .button:active, .button:focus, a.button:active, a.button:focus {
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    -moz-transform: scale(1);
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    outline: none; }
   @media screen and (max-width: 580px) {
     .button, a.button {
       width: 100%; } }
+  @media screen and (min-width: 580px) {
+    .button:hover, a.button:hover {
+      -ms-transform: scale(1.15);
+      -o-transform: scale(1.15);
+      -moz-transform: scale(1.15);
+      -webkit-transform: scale(1.15);
+      transform: scale(1.15);
+      outline: none; }
+    .button:active, .button:focus, a.button:active, a.button:focus {
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      -moz-transform: scale(1);
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      outline: none; } }
 
 #main-menu {
   position: fixed;
@@ -451,12 +452,13 @@ body {
           -moz-transition: transform linear 0.1s;
           -webkit-transition: transform linear 0.1s;
           transition: transform linear 0.1s; }
-          #record .wrapper .content .controles img:hover, #record .wrapper .content .controles .btn-stop:hover {
-            -ms-transform: scale(1.15);
-            -o-transform: scale(1.15);
-            -moz-transform: scale(1.15);
-            -webkit-transform: scale(1.15);
-            transform: scale(1.15); }
+          @media screen and (min-width: 580px) {
+            #record .wrapper .content .controles img:hover, #record .wrapper .content .controles .btn-stop:hover {
+              -ms-transform: scale(1.15);
+              -o-transform: scale(1.15);
+              -moz-transform: scale(1.15);
+              -webkit-transform: scale(1.15);
+              transform: scale(1.15); } }
           #record .wrapper .content .controles img:active, #record .wrapper .content .controles img:focus, #record .wrapper .content .controles .btn-stop:active, #record .wrapper .content .controles .btn-stop:focus {
             -ms-transform: scale(1);
             -o-transform: scale(1);

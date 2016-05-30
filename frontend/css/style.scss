@@ -68,18 +68,20 @@ body {
 		font-family: 'futuramedium';
 	}
 
-	&:hover {
-		@include cross-browser(transform, scale(1.15));
-		outline: none;
-	}
-
-	&:active, &:focus {
-		@include cross-browser(transform, scale(1));
-		outline: none;
-	}
-
 	@media screen and (max-width: $screen-xs) {
 		width: 100%;
+	}
+
+	@media screen and (min-width: $screen-xs) {
+		&:hover {
+			@include cross-browser(transform, scale(1.15));
+			outline: none;
+		}
+
+		&:active, &:focus {
+			@include cross-browser(transform, scale(1));
+			outline: none;
+		}
 	}
 }
 

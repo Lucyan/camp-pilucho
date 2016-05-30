@@ -69,21 +69,26 @@ piluchoApp.controller("recordDektopController", function ($scope, User, $rootSco
 			return;
 		}
 
-		
-		
-		console.log('file', oFile); return false;
-
 
 		$scope.onUpoad = true;
 
+		var videoName = 'record-' + new Date().getTime() + '.MOV';
+		var audioName = 'record-' + new Date().getTime() + '.wav';
 		var formData = new FormData($('#record .ios-form')[0]);
+		formData.append('audio-filename', audioName);
+		formData.append('video-filename', videoName);
 
-		User.saveAudio(formData, function(resp) {
-    		$scope.backSRC = resp.url;
-    		$scope.setAudioPlay(resp.url)
-    		audioSRC = resp.url;
-    		$scope.onData = true;
-    		$scope.onUpoad = false;
+		User.saveAudio(formData, function(resp, msg) {
+			if (resp) {
+				$scope.backSRC = resp.url;
+				$scope.setAudioPlay(resp.url)
+				audioSRC = resp.url;
+				$scope.onData = true;
+			} else {
+				alert(msg);
+			}
+
+			$scope.onUpoad = false;
     	});
 	}
 

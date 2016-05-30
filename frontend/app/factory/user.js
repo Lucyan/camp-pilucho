@@ -76,6 +76,11 @@ piluchoApp.factory("User", function ($http, ezfb, $rootScope){
             	headers: {'Content-Type': undefined}
 			}).then(function(resp) {
 				if (callback) callback(resp.data);
+			}, function(resp) {
+				if (resp.status == 409) {
+					if (callback) callback(false, resp.data.msg);
+				} else
+					if (callback) callback(false, 'El archivo es demasiado grande');
 			});
 		},
 

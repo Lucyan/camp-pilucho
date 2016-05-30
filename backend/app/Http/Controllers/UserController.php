@@ -71,19 +71,54 @@ class UserController extends Controller {
 
     public function upload(Request $request) {
         $file = $request->file('audio-blob');
-        $name = 'user-' . $request['user'] . '-' . $request->get('audio-filename');
         if ($file) {
-            $destino = __DIR__ . '/../../../../frontend/uploads';
+             $name = 'user-' . $request['user'] . '-' . $request->get('audio-filename');
+            if ($file) {
+                $destino = __DIR__ . '/../../../../frontend/uploads';
+                try {
+                    $file->move($destino, $name);
+                    return response()->json(['msg' => 'Guardado OK', 'url' => '/uploads/' . $name]);
+                } catch (Exception $e) {
+                    return response()->json(['msg' => 'Error al mover', 'catch' => $e->getMessage()], 409);
+                }
+                
+
+            } else {
+                return response()->json(['msg' => 'Datos incorrectos'], 409);
+            }
+        } else if ($request->file('video_file')) {
+            $file = $request->file('video_file');
+            $destino = __DIR__ . '/../../../../frontend/uploads/';
+            $name = 'user-' . $request['user'] . '-' . $request->get('video-filename');
+            $audio_mame = 'user-' . $request['user'] . '-' . $request->get('audio-filename');
+            $video_file = $destino . $name;
+            $audio_file = $destino . $audio_mame;
+
             try {
                 $file->move($destino, $name);
-                return response()->json(['msg' => 'Guardado OK', 'url' => '/uploads/' . $name]);
-            } catch (Exception $e) {
-                return response()->json(['msg' => 'Error al mover', 'catch' => $e->getMessage()], 409);
-            }
-            
 
+                $ffmpeg = __DIR__ . "/ffmpeg/ffmpeg";
+                $cmd = "$ffmpeg -i $video_file 2>&1 | grep 'Duration' | cut -d ' ' -f 4 | sed s/,//";
+                $time =  exec($cmd);
+                $duration = explode(":", $time);   
+                $duration_in_seconds = $duration[0]*3600 + $duration[1]*60+ round($duration[2]); 
+
+                if ($duration_in_seconds > 15) {
+                    unlink($video_file);
+                    return response()->json(['msg' => 'Error, la duración no debe superar los 15 segundos'], 409);
+                }
+
+                $cmd = "$ffmpeg -y -i $video_file $audio_file";
+                exec($cmd);
+
+                unlink($video_file);
+                
+                return response()->json(['msg' => 'Guardado OK', 'url' => '/uploads/' . $audio_mame]);
+            } catch (Exception $e) {
+                return response()->json(['msg' => 'Error al procesar archivo', 'catch' => $e->getMessage()], 409);
+            }
         } else {
-            return response()->json(['msg' => 'Datos incorrectos'], 409);
+            return response()->json(['msg' => 'Archivo Inválido'], 409);
         }
     }
 
