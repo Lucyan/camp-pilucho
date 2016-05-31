@@ -40,7 +40,7 @@ piluchoApp.controller("galeriaController", function ($scope, $http, deviceDetect
 	$scope.playRecord = function($event, i, j) {
 		if (!$scope.inPlay) {
 			var src = j;
-			if (i) src =$scope.listGallery[i][j].audio;
+			if (i != null) src = $scope.listGallery[i][j].audio;
 
 			$scope.inPlay = true;
 			$($event.currentTarget).addClass('playing');
