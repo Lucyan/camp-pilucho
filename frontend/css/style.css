@@ -262,15 +262,24 @@ body {
         bottom: 0px;
         background: url(../img/home/movil/pilucho.png);
         background-size: 100% auto;
-        height: 466px;
-        max-height: 100%;
-        padding-top: 190px; }
+        margin-top: 0px;
+        width: 100%; }
+        #agegate .container:before {
+          content: '';
+          display: block;
+          padding-top: 140%; }
+        #agegate .container .content {
+          position: absolute;
+          bottom: 0px;
+          left: 0px;
+          width: 100%;
+          padding: 0 15px 10px; }
         #agegate .container .title {
           margin-bottom: 0px; }
         #agegate .container p {
-          margin-bottom: 20px; }
+          margin-bottom: 10px; }
         #agegate .container button {
-          margin: 10px 0; } }
+          margin: 10px 0 0px; } }
 
 #record {
   display: block;
