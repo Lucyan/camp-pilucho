@@ -55,6 +55,9 @@ body {
   transform: scale(1); }
   .button.red, a.button.red {
     background-color: #E2383C; }
+  .button.white, a.button.white {
+    background-color: #fff;
+    color: #E2383C; }
   .button i, a.button i {
     font-size: 15px;
     margin-right: 5px; }
@@ -521,10 +524,12 @@ body {
       #record .wrapper .content .final {
         padding-top: 40px; }
         #record .wrapper .content .final p {
-          margin: 20px 45px 0;
+          margin: 20px 45px 30px;
           font-size: 16px; }
           #record .wrapper .content .final p.mas {
             margin-top: 50px; }
+        #record .wrapper .content .final .buttons button {
+          margin: 0px 10px; }
         #record .wrapper .content .final .share {
           color: #fff;
           margin-top: 50px; }
@@ -535,7 +540,11 @@ body {
               margin: 10px 0px 0;
               font-size: 18px; }
               #record .wrapper .content .final p.mas {
-                margin-top: 60px; }
+                margin-top: 50px;
+                margin-bottom: 30px; }
+            #record .wrapper .content .final .buttons button {
+              width: 90%;
+              margin: 10px 0px; }
             #record .wrapper .content .final .share span {
               display: block;
               width: 100%;

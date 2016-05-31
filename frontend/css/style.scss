@@ -57,6 +57,11 @@ body {
 		background-color: $color-red;
 	}
 
+	&.white {
+		background-color: $color-white;
+		color: $color-red;
+	}
+
 	i {
 		font-size: 15px;
 		margin-right: 5px;

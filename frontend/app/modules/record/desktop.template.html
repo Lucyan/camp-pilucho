@@ -1,7 +1,7 @@
 <div class="wrapper">
 	<div class="content">
 		<img src="img/record/desktop/close.png" class="btn-close hidden-xs" ng-click="close();">
-		<div class="movil-close" ng-click="close();">{{movilClose}}</div>
+		<div class="movil-close" ng-click="close();" ng-show="!showFinal">{{movilClose}}</div>
 		<div ng-show="!showFinal">
 			<img src="img/record/desktop/title.png" class="title">
 			<div class="row">
@@ -49,11 +49,12 @@
 		<div ng-show="showFinal" class="final">
 			<img src="img/record/final/logo.png">
 			<p class="mas">
-				Gracias por alentar a Chile. Tu arenga ahora está en estado de revisión.
+				Gracias por alentar a Chile, revisaremos tu audio y si esta aprobado ya estarás participando.
 			</p>
-			<p>
-				Una ves publicado estaras participando por uno de los increíbles premios de Campanario.
-			</p>
+			<div class="buttons">
+				<button class="button white" ng-click="close();">CONTINUAR</button>
+				<button class="button" ng-click="restart();">GRABAR OTRA ARENGA</button>
+			</div>
 
 			<div class="share">
 				<span>Comparte con tus amigos</span>

@@ -197,6 +197,10 @@ piluchoApp.controller("recordDektopController", function ($scope, User, $rootSco
 		}
 	}
 
+	$scope.restart = function() {
+		restart();
+	}
+
 	function restart() {
 		$scope.onRecord = false;
 		$scope.onData = false;
