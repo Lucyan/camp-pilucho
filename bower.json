@@ -29,7 +29,8 @@
     "howler": "2.0.0-beta13",
     "ng-device-detector": "*",
     "lialosiu-dancer": "*",
-    "semantic-ui": "*"
+    "semantic-ui": "*",
+    "angular-clipboard": "*"
   },
   "devDependencies": {},
   "resolutions": {

@@ -81,4 +81,13 @@ piluchoApp.controller("galeriaController", function ($scope, $http, deviceDetect
 			}
 		}
 	}
+
+
+	$scope.success = function () {
+        console.log('Copied!');
+    };
+
+    $scope.fail = function (err) {
+        console.error('Error!', err);
+    };
 });
