@@ -8,7 +8,6 @@
 	}
 
 	.conectar {
-		margin-top: 40px;
 
 		@media screen and (max-width: $screen-xs) {
 			background: url(../img/home/movil/pilucho.png);
@@ -16,6 +15,7 @@
 			height: 466px;
 			background-size: 100% auto;
 			padding-top: 175px;
+			margin-top: 30px;
 
 			p {
 				color: $color-red;
@@ -28,6 +28,7 @@
 		.title {
 			margin-bottom: 30px;
 			max-width: 100%;
+			width: 620px;
 		}
 
 		button.facebook {

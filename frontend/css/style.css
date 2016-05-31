@@ -32,7 +32,7 @@ body {
   color: #fff;
   background-color: #0978BE;
   border: 1px solid #fff;
-  padding: 5px 35px;
+  padding: 10px 50px;
   -ms-box-shadow: 0px 2px 12px -1px rgba(0, 0, 0, 0.67);
   -o-box-shadow: 0px 2px 12px -1px rgba(0, 0, 0, 0.67);
   -moz-box-shadow: 0px 2px 12px -1px rgba(0, 0, 0, 0.67);
@@ -64,7 +64,7 @@ body {
     font-family: 'futuramedium'; }
   @media screen and (max-width: 580px) {
     .button, a.button {
-      width: 100%; } }
+      width: 90%; } }
   @media screen and (min-width: 580px) {
     .button:hover, a.button:hover {
       -ms-transform: scale(1.15);
@@ -244,12 +244,18 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 3000; }
+  z-index: 3000;
+  text-align: left;
+  background-color: #E2383C; }
+  #agegate .logo {
+    margin-top: 15px;
+    margin-left: 20px; }
   #agegate .container {
-    margin-top: 10%; }
+    margin-top: 7%; }
     #agegate .container .title {
       margin-bottom: 40px;
-      max-width: 100%; }
+      max-width: 100%;
+      width: 620px; }
     #agegate .container p {
       color: #E2383C;
       margin-bottom: 30px;
@@ -566,31 +572,31 @@ body {
   @media screen and (max-width: 580px) {
     #home {
       padding-top: 30px; } }
-  #home .conectar {
-    margin-top: 40px; }
+  @media screen and (max-width: 580px) {
+    #home .conectar {
+      background: url(../img/home/movil/pilucho.png);
+      width: 100%;
+      height: 466px;
+      background-size: 100% auto;
+      padding-top: 175px;
+      margin-top: 30px; }
+      #home .conectar p {
+        color: #E2383C;
+        max-width: 180px;
+        font-size: 15px;
+        margin: 0 auto; } }
+  #home .conectar .title {
+    margin-bottom: 30px;
+    max-width: 100%;
+    width: 620px; }
+  #home .conectar button.facebook {
+    margin-bottom: 20px; }
+  #home .conectar .game button {
+    margin: 0 10px; }
     @media screen and (max-width: 580px) {
-      #home .conectar {
-        background: url(../img/home/movil/pilucho.png);
-        width: 100%;
-        height: 466px;
-        background-size: 100% auto;
-        padding-top: 175px; }
-        #home .conectar p {
-          color: #E2383C;
-          max-width: 180px;
-          font-size: 15px;
-          margin: 0 auto; } }
-    #home .conectar .title {
-      margin-bottom: 30px;
-      max-width: 100%; }
-    #home .conectar button.facebook {
-      margin-bottom: 20px; }
-    #home .conectar .game button {
-      margin: 0 10px; }
-      @media screen and (max-width: 580px) {
-        #home .conectar .game button {
-          margin: 0;
-          margin-bottom: 10px; } }
+      #home .conectar .game button {
+        margin: 0;
+        margin-bottom: 10px; } }
   #home .footer {
     position: absolute;
     bottom: 0px;
