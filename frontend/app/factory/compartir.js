@@ -6,7 +6,6 @@ piluchoApp.factory("Compartir", function ($location){
 		fb: function(id) {
 			var shareURL = url;
 			if (id) shareURL += '/ver/' + id;
-			console.log(shareURL);
 			var urlFacebook = '//www.facebook.com/share.php?u=' + encodeURIComponent(shareURL);
 			var popupWindow = window.open(
 				urlFacebook,'popUpWindow','height=300,width=600,left=10,top=10,resizable=no,scrollbars=no,toolbar=no,menubar=no,location=no,directories=no,status=yes');
@@ -15,7 +14,6 @@ piluchoApp.factory("Compartir", function ($location){
 		tw: function(id) {
 			var shareURL = url;
 			if (id) shareURL += '/ver/' + id;
-			console.log(shareURL);
 			var mensaje = encodeURIComponent('Ingresa ahora, dale un grito de apoyo a Chile y participa por fabulosos premios');
 			var shareURL = encodeURIComponent(shareURL);
 
