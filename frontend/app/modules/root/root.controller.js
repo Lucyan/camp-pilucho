@@ -1,4 +1,4 @@
-piluchoApp.controller("rootController", function ($scope, $window, Compartir) {
+piluchoApp.controller("rootController", function ($scope, $window) {
 	$scope.agegate = true;
 
 	$scope.getAgeGate = function() {

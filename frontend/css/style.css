@@ -250,6 +250,15 @@ body {
   #agegate .logo {
     margin-top: 15px;
     margin-left: 20px; }
+  @media screen and (max-width: 580px) {
+    #agegate {
+      text-align: center;
+      background: url(../img/agegate/movil/bg.jpg);
+      background-size: 100% auto; }
+      #agegate .logo {
+        margin-left: 0px; }
+      #agegate .backstretch {
+        display: none; } }
   #agegate .container {
     margin-top: 7%; }
     #agegate .container .title {
@@ -266,8 +275,6 @@ body {
       #agegate .container {
         position: absolute;
         bottom: 0px;
-        background: url(../img/home/movil/pilucho.png);
-        background-size: 100% auto;
         margin-top: 0px;
         width: 100%; }
         #agegate .container:before {
@@ -279,7 +286,7 @@ body {
           bottom: 0px;
           left: 0px;
           width: 100%;
-          padding: 0 15px 10px; }
+          padding: 0 15px 30px; }
         #agegate .container .title {
           margin-bottom: 0px; }
         #agegate .container p {
