@@ -1,9 +1,18 @@
-piluchoApp.controller("galeriaController", function ($scope, $http, deviceDetector) {
+piluchoApp.controller("galeriaController", function ($scope, $http, deviceDetector, $routeParams) {
 	$scope.listGallery = [];
 	$scope.showMore = true;
 	$scope.inPlay = false;
 	var page = 0;
 	$scope.isDesktop = deviceDetector.isDesktop();
+
+	if ($routeParams.recordID != undefined) {
+		$http.get('/api/galeria/get?id=' + $routeParams.recordID).then(function(resp) {
+			if (resp.data.record) {
+				$scope.dataSingle = resp.data;
+				$scope.viewSingle = true;
+			}
+		});
+	}
 
 	$scope.fetchGallery = function(page) {
 		if (page == undefined) page = 0;
@@ -30,12 +39,15 @@ piluchoApp.controller("galeriaController", function ($scope, $http, deviceDetect
 
 	$scope.playRecord = function($event, i, j) {
 		if (!$scope.inPlay) {
+			var src = j;
+			if (i) src =$scope.listGallery[i][j].audio;
+
 			$scope.inPlay = true;
 			$($event.currentTarget).addClass('playing');
 
 			if (deviceDetector.isDesktop()) {
 				var dancer = new Dancer();
-				dancer.load({src: $scope.listGallery[i][j].audio});
+				dancer.load({src: src});
 
 				var max = 0;
 				var actualClase = '';
@@ -68,7 +80,7 @@ piluchoApp.controller("galeriaController", function ($scope, $http, deviceDetect
 				dancer.play();
 			} else {
 				var sound = new Howl({
-					src: [$scope.listGallery[i][j].audio],
+					src: [src],
 					autoplay: true,
 					onend: function() {
 						$($event.currentTarget).removeClass('playing');
@@ -83,12 +95,7 @@ piluchoApp.controller("galeriaController", function ($scope, $http, deviceDetect
 		}
 	}
 
-
-	$scope.success = function () {
-        console.log('Copied!');
-    };
-
-    $scope.fail = function (err) {
-        console.error('Error!', err);
-    };
+    $scope.closeSingle = function() {
+    	$scope.viewSingle = false;
+    }
 });

@@ -47,6 +47,11 @@ $app->group(["prefix" => "galeria", "namespace" => "App\Http\Controllers"], func
 		'as' => 'getGaleria',
 		'uses' => 'GaleriaController@get'
 	]);
+
+	$app->get('/get', [
+		'as' => 'getSingleGaleria',
+		'uses' => 'GaleriaController@getSingle'
+	]);
 });
 
 $app->group(["prefix" => "admin", "namespace" => "App\Http\Controllers"], function ($app) {

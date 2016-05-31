@@ -19,9 +19,10 @@ piluchoApp.config(function ($routeProvider, $locationProvider, ezfbProvider){
 		templateUrl: 'app/modules/root/main.template.html',
 		controller: 'rootController'
 	})
-	.when('/static-page',
+	.when('/ver/:recordID',
 	{
-		templateUrl: 'app/modules/staticPage/staticPage.template.html'
+		templateUrl: 'app/modules/root/main.template.html',
+		controller: 'rootController'
 	})
 	.otherwise({
 		redirectTo: '/'

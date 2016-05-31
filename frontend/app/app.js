@@ -9,14 +9,18 @@ var piluchoApp = angular.module("piluchoApp",["ngRoute", "ui.bootstrap", "ng-bac
 piluchoApp.controller('mainController', ['$rootScope', 'Compartir', '$location', function ($rootScope, Compartir, $location) {
 	$rootScope.userLogin = false;
 	$rootScope.userRecord = false;
-	$rootScope.absUrl = $location.absUrl();
-
-	$rootScope.shareFB = function() {
-		Compartir.fb();
+	$rootScope.getPath = function(id) {
+		var url = $location.protocol() + "://" + $location.host() + ":" + $location.port();
+		if (id) url += '/ver/' + id;
+		return url;
 	}
 
-	$rootScope.shareTW = function() {
-		Compartir.tw();
+	$rootScope.shareFB = function(id) {
+		Compartir.fb(id);
+	}
+
+	$rootScope.shareTW = function(id) {
+		Compartir.tw(id);
 	}
 
 }]);

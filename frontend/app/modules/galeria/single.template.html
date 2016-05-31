@@ -1,0 +1,30 @@
+<div class="wrapper">
+	<div class="content-single text-center">
+		<img src="img/record/desktop/close.png" class="btn-close" ng-click="closeSingle();">
+
+		<div class="block">
+			<div class="user text-left">
+				<img ng-src="//graph.facebook.com/{{dataSingle.user.fb_id}}/picture?type=square">
+				<span class="name">{{dataSingle.user.name}}</span>
+			</div>
+			<div class="player">
+				<div class="content">
+					<div ng-show="isDesktop">
+						<img src="img/galeria/player.png" class="fake">
+						<div class="boca"></div>
+					</div>
+					<div ng-show="!isDesktop">
+						<img src="img/galeria/movil/pilucho.jpg" ng-show="!inPlay" class="fake">
+						<img src="img/galeria/movil/pilucho.gif" ng-show="inPlay" class="fake">
+					</div>
+					<img src="img/galeria/play.png" class="play" ng-click="playRecord($event, false, dataSingle.record.audio);">
+				</div>
+			</div>
+			<div class="share">
+				<a href="#" ng-click="shareFB(dataSingle.record.id);"><img src="img/galeria/facebook.png"></a>
+				<a href="#" ng-click="shareTW(dataSingle.record.id);"><img src="img/galeria/twitter.png"></a>
+				<a href="#" clipboard text="getPath(dataSingle.record.id)"><img src="img/galeria/link.png"></a>
+			</div>
+		</div>
+	</div>
+</div>

@@ -58,4 +58,17 @@ class GaleriaController extends Controller {
 
         return response()->json(['active' => $record->active]);
     }
+
+
+    public function getSingle(Request $request) {
+        $id = $request->get('id');
+
+        $record = Record::where('id', $id)->where('active', 1)->first();
+        $user = null;
+        if ($record) {
+            $user = User::where('id', $record->user_id)->select('name', 'fb_id')->first();
+        }
+
+        return response()->json(['record' => $record, 'user' => $user]);
+    }
 }
