@@ -11,8 +11,14 @@
 					</div>
 					<div class="player">
 						<div class="content">
-							<img src="img/galeria/player.png" class="fake">
-							<div class="boca"></div>
+							<div ng-show="isDesktop">
+								<img src="img/galeria/player.png" class="fake">
+								<div class="boca"></div>
+							</div>
+							<div ng-show="!isDesktop">
+								<img src="img/galeria/movil/pilucho.jpg" ng-show="!inPlay" class="fake">
+								<img src="img/galeria/movil/pilucho.gif" ng-show="inPlay" class="fake">
+							</div>
 							<img src="img/galeria/play.png" class="play" ng-click="playRecord($event, mainindex, recordindex);">
 						</div>
 					</div>

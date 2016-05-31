@@ -11,7 +11,8 @@
 							<div class="movil-text" ng-show="!onData">
 								Graba tu audio alentando a Chile (15 segundos max.) y participa por increíbles premios.
 							</div>
-							<div class="boca"></div>
+							<div class="boca" ng-show="isDesktop"></div>
+							<img src="img/galeria/movil/pilucho.gif" ng-show="onPlay && !isDesktop" class="movil-gif">
 							<img src="img/record/desktop/btn-play.png" ng-show="!onPlay && onData && !onRecord" ng-Click="play()" class="play">
 						</div>
 					</div>

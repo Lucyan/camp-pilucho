@@ -390,6 +390,12 @@ body {
           height: 100%;
           background: url(../img/record/desktop/pilucho.png);
           background-size: 100% 100%; }
+          @media screen and (max-width: 580px) {
+            #record .wrapper .content .pilucho-wrapper .pilucho-content {
+              background: url(../img/galeria/movil/pilucho.jpg);
+              background-size: 100% 100%; }
+              #record .wrapper .content .pilucho-wrapper .pilucho-content .movil-gif {
+                width: 100%; } }
           #record .wrapper .content .pilucho-wrapper .pilucho-content img.play {
             width: 70px;
             margin-top: 37%;

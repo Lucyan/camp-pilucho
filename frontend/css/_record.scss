@@ -98,6 +98,15 @@
 					background: url(../img/record/desktop/pilucho.png);
 					background-size: 100% 100%;
 
+					@media screen and (max-width: $screen-xs) {
+						background: url(../img/galeria/movil/pilucho.jpg);
+						background-size: 100% 100%;
+
+						.movil-gif {
+							width: 100%;
+						}
+					}
+
 					img.play {
 						width: 70px;
 						margin-top: 37%;

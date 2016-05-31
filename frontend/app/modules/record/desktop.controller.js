@@ -3,6 +3,8 @@ piluchoApp.controller("recordDektopController", function ($scope, User, $rootSco
 		audio: true
 	};
 
+	$scope.isDesktop = deviceDetector.isDesktop();
+
 	var audioSRC = null;
 	var playBackTimeID = null;
 

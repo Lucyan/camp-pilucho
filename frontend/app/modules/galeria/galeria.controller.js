@@ -3,6 +3,7 @@ piluchoApp.controller("galeriaController", function ($scope, $http, deviceDetect
 	$scope.showMore = true;
 	$scope.inPlay = false;
 	var page = 0;
+	$scope.isDesktop = deviceDetector.isDesktop();
 
 	$scope.fetchGallery = function(page) {
 		if (page == undefined) page = 0;
@@ -52,7 +53,7 @@ piluchoApp.controller("galeriaController", function ($scope, $http, deviceDetect
 						}
 
 						if (actualClase != clase) {
-							$($event.currentTarget).parent().children('.boca').removeClass(actualClase).addClass(clase);
+							$($event.currentTarget).parent().parent().find('.boca').removeClass(actualClase).addClass(clase);
 							actualClase = clase;
 						}
 					} else {
