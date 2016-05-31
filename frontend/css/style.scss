@@ -78,7 +78,7 @@ body {
 	}
 
 	@media screen and (min-width: $screen-xs) {
-		&:hover {
+		&:hover, &.active {
 			@include cross-browser(transform, scale(1.15));
 			outline: none;
 		}

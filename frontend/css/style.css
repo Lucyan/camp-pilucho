@@ -69,7 +69,7 @@ body {
     .button, a.button {
       width: 90%; } }
   @media screen and (min-width: 580px) {
-    .button:hover, a.button:hover {
+    .button:hover, .button.active, a.button:hover, a.button.active {
       -ms-transform: scale(1.15);
       -o-transform: scale(1.15);
       -moz-transform: scale(1.15);

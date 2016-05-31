@@ -18,6 +18,12 @@ piluchoApp.controller("menuController", function ($scope, $rootScope, User) {
 		var positionNow = $($($event.currentTarget).attr('href')).offset().top + $('#content').scrollTop();
 		if (positionNow > 0) positionNow -= 62;
 		$('#content').animate({ scrollTop: positionNow }, 600);
+		if ($($event.currentTarget).attr('href') == '#home') {
+			$('#home button.facebook').addClass('active');
+			setTimeout(function() {
+				$('#home button.facebook').removeClass('active');
+			}, 200);
+		}
 	}
 
 	$scope.isActive = function(id) {
