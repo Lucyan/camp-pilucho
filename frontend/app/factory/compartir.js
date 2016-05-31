@@ -8,7 +8,7 @@ piluchoApp.factory("Compartir", function ($location){
 		},
 
 		tw: function() {
-			var mensaje = encodeURIComponent('Alienta a Chile junto al Pilucho y participa por increíbles premios!');
+			var mensaje = encodeURIComponent('Ingresa ahora, dale un grito de apoyo a Chile y participa por fabulosos premios');
 			var url = encodeURIComponent($location.absUrl());
 
 			var urlTwitter = 'https://twitter.com/intent/tweet?text=';
