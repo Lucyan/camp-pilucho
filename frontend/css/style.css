@@ -143,7 +143,7 @@ body {
           top: 18px;
           left: 0;
           background-color: #fff;
-          min-width: 100%;
+          min-width: 115%;
           max-height: 0px;
           overflow: hidden;
           -ms-border-radius: 5px;
@@ -163,7 +163,7 @@ body {
             padding: 0;
             margin: 10px 0px; }
             #main-menu ul li.user .data .name .menu ul li {
-              padding: 3px 0B; }
+              padding: 3px 3px; }
               #main-menu ul li.user .data .name .menu ul li a {
                 color: #E2383C; }
         #main-menu ul li.user .data .name:hover .menu {

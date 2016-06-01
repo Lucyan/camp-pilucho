@@ -64,7 +64,7 @@
 							top: 18px;
 							left: 0;
 							background-color: $color-white;
-							min-width: 100%;
+							min-width: 115%;
 							max-height: 0px;
 							overflow: hidden;
 							@include cross-browser(border-radius, 5px);
@@ -79,7 +79,7 @@
 
 								li {
 
-									padding: 3px 0B;
+									padding: 3px 3px;
 
 									a {
 										color: $color-red;
