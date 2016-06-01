@@ -99,7 +99,8 @@ body {
   transition: background-color linear 0.3s; }
   #main-menu .logo {
     position: relative;
-    z-index: 1020; }
+    z-index: 1020;
+    width: 161px; }
   @media screen and (max-width: 580px) {
     #main-menu {
       text-align: center; } }
