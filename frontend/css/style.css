@@ -536,7 +536,7 @@ body {
           margin-top: 50px; }
         @media screen and (max-width: 580px) {
           #record .wrapper .content .final {
-            padding-top: 50px; }
+            padding-top: 10px; }
             #record .wrapper .content .final p {
               margin: 10px 0px 0;
               font-size: 18px; }
@@ -1042,13 +1042,15 @@ body {
   padding-bottom: 77px;
   background: url(../img/kit/challa.png); }
   #kit .container {
-    max-width: 915px; }
+    max-width: 1000px; }
   #kit p {
     color: #fff;
     max-width: 430px;
     margin: 30px auto 0px;
     left: 0;
     right: 0; }
+  #kit img {
+    max-width: 100%; }
   #kit .row {
     margin-bottom: 50px; }
   @media screen and (max-width: 580px) {

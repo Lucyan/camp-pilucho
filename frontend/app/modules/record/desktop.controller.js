@@ -3,6 +3,9 @@ piluchoApp.controller("recordDektopController", function ($scope, User, $rootSco
 		audio: true
 	};
 
+	if (deviceDetector.os == 'ios') $scope.movilText = 'Graba tu audio alentando a Chile desde la cámara de tu celular (15 segundos max.) y participa por increíbles premios.';
+	else $scope.movilText = 'Graba tu audio alentando a Chile (15 segundos max.) y participa por increíbles premios.';
+
 	$scope.isDesktop = deviceDetector.isDesktop();
 
 	var audioSRC = null;
