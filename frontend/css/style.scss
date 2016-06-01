@@ -75,9 +75,11 @@ body {
 
 	@media screen and (max-width: $screen-xs) {
 		width: 90%;
+		padding: 10px 20px;
 	}
 
 	@media screen and (min-width: $screen-xs) {
+
 		&:hover, &.active {
 			@include cross-browser(transform, scale(1.15));
 			outline: none;

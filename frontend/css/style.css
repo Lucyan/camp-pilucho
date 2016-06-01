@@ -67,7 +67,8 @@ body {
     font-family: 'futuramedium'; }
   @media screen and (max-width: 580px) {
     .button, a.button {
-      width: 90%; } }
+      width: 90%;
+      padding: 10px 20px; } }
   @media screen and (min-width: 580px) {
     .button:hover, .button.active, a.button:hover, a.button.active {
       -ms-transform: scale(1.15);
@@ -608,13 +609,13 @@ body {
         font-size: 15px;
         margin: 0 auto; } }
   #home .conectar .title {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     max-width: 100%;
     width: 620px; }
   #home .conectar button.facebook {
     margin-bottom: 20px; }
   #home .conectar .game button {
-    margin: 0 10px; }
+    margin: 10px 10px; }
     @media screen and (max-width: 580px) {
       #home .conectar .game button {
         margin: 0;
@@ -1045,7 +1046,7 @@ body {
   #kit p {
     color: #fff;
     max-width: 430px;
-    margin: 0 auto;
+    margin: 30px auto 0px;
     left: 0;
     right: 0; }
   #kit .row {

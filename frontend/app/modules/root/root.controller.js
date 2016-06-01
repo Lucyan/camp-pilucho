@@ -1,5 +1,7 @@
-piluchoApp.controller("rootController", function ($scope, $window) {
+piluchoApp.controller("rootController", function ($scope, $rootScope, $window, deviceDetector) {
 	$scope.agegate = true;
+
+	$scope.isDesktop = deviceDetector.isDesktop();
 
 	$scope.getAgeGate = function() {
 		return null == localStorage.getItem('agegate');

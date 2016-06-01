@@ -26,7 +26,7 @@
 		}
 
 		.title {
-			margin-bottom: 30px;
+			margin-bottom: 10px;
 			max-width: 100%;
 			width: 620px;
 		}
@@ -37,7 +37,7 @@
 
 		.game {
 			button {
-				margin: 0 10px;
+				margin: 10px 10px;
 
 				@media screen and (max-width: $screen-xs) {
 					margin: 0;

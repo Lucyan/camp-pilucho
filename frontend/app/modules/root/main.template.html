@@ -10,6 +10,8 @@
 
 <ng-include src="'app/modules/ganadores/ganadores.template.html'" ng-controller="ganadoresController" class="text-center" id="ganadores"></ng-include>
 
-<ng-include src="'app/modules/root/kit.template.html'" class="text-center" ng-style="{'background-position-y': windowPosY*1.5}" id="kit"></ng-include>
+<ng-include ng-if="isDesktop" src="'app/modules/root/kit.template.html'" class="text-center" ng-style="{'background-position-y': windowPosY*1.5}" id="kit"></ng-include>
+
+<ng-include ng-if="!isDesktop" src="'app/modules/root/kit.template.html'" class="text-center" id="kit"></ng-include>
 
 <ng-include src="'app/modules/root/footer.template.html'" class="text-left" id="footer"></ng-include>
