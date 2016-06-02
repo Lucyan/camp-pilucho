@@ -134,7 +134,7 @@ body {
     .page-loader .content img {
       display: block;
       margin: 10px auto 0;
-      max-width: 100px; }
+      max-width: 84px; }
     @media screen and (max-width: 580px) {
       .page-loader .content {
         margin-top: 50%; } }
