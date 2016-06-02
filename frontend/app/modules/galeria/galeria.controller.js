@@ -100,7 +100,7 @@ piluchoApp.controller("galeriaController", function ($scope, $http, deviceDetect
     }
 
     $scope.getPath = function(id) {
-		var url = $location.protocol() + "://" + $location.host() + ":" + $location.port();
+		var url = $location.protocol() + "://" + $location.host();
 		if (id) url += '/ver/' + id;
 		return url;
 	}

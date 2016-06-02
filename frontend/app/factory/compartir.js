@@ -1,5 +1,5 @@
 piluchoApp.factory("Compartir", function ($location){
-	var url = $location.protocol() + "://" + $location.host() + ":" + $location.port();
+	var url = $location.protocol() + "://" + $location.host();
 
 	var interfaz = {
 
