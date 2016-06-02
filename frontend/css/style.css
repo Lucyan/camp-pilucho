@@ -85,6 +85,33 @@ body {
       transform: scale(1);
       outline: none; } }
 
+.fade-animate.ng-animate {
+  -ms-transition: opacity linear 0.2s;
+  -o-transition: opacity linear 0.2s;
+  -moz-transition: opacity linear 0.2s;
+  -webkit-transition: opacity linear 0.2s;
+  transition: opacity linear 0.2s;
+  opacity: 0; }
+  .fade-animate.ng-animate.ng-hide-remove {
+    opacity: 0; }
+    .fade-animate.ng-animate.ng-hide-remove.ng-hide-remove-active {
+      opacity: 1; }
+  .fade-animate.ng-animate.ng-hide-add {
+    opacity: 1; }
+    .fade-animate.ng-animate.ng-hide-add.ng-hide {
+      opacity: 0; }
+
+.top-animate.ng-animate {
+  -ms-transition: top cubic-bezier(0.87, -0.41, 0.19, 1.44) 0.4s;
+  -o-transition: top cubic-bezier(0.87, -0.41, 0.19, 1.44) 0.4s;
+  -moz-transition: top cubic-bezier(0.87, -0.41, 0.19, 1.44) 0.4s;
+  -webkit-transition: top cubic-bezier(0.87, -0.41, 0.19, 1.44) 0.4s;
+  transition: top cubic-bezier(0.87, -0.41, 0.19, 1.44) 0.4s; }
+  .top-animate.ng-animate.ng-hide-add {
+    top: 0 !important; }
+    .top-animate.ng-animate.ng-hide-add.ng-hide {
+      top: -100% !important; }
+
 #main-menu {
   position: fixed;
   z-index: 1000;

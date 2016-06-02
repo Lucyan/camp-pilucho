@@ -30,7 +30,8 @@
     "ng-device-detector": "*",
     "lialosiu-dancer": "*",
     "semantic-ui": "*",
-    "angular-clipboard": "*"
+    "angular-clipboard": "*",
+    "angular-animate": "1.5.5"
   },
   "devDependencies": {},
   "resolutions": {

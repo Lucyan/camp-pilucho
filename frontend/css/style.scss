@@ -92,6 +92,41 @@ body {
 	}
 }
 
+.fade-animate.ng-animate {
+	@include cross-browser(transition, opacity linear .2s);
+	opacity: 0;
+
+	// Entrada
+	&.ng-hide-remove {
+		opacity: 0;
+
+		&.ng-hide-remove-active {
+			opacity: 1;
+		}
+	}
+
+	// Salida
+	&.ng-hide-add {
+		opacity: 1;
+
+		&.ng-hide {
+			opacity: 0;
+		}
+	}
+}
+
+.top-animate.ng-animate {
+	@include cross-browser(transition, top cubic-bezier(.87,-.41,.19,1.44) .4s);
+
+	&.ng-hide-add {
+		top: 0 !important;
+
+		&.ng-hide {
+			top: -100% !important;
+		}
+	}
+}
+
 @import "menu";
 @import "agegate";
 @import "record";
