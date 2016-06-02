@@ -1,0 +1,32 @@
+.page-loader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: $color-red;
+	z-index: 99999;
+
+	&.ng-leave {
+		opacity: 1;
+		@include cross-browser(transition, opacity linear .2s);
+
+		&.ng-leave-active {
+			opacity: 0;
+		}
+	}
+
+	.content {
+		margin: 16% auto 0;
+
+		img {
+			display: block;;
+			margin: 10px auto 0;
+			max-width: 100px;
+		}
+
+		@media screen and (max-width: $screen-xs) {
+			margin-top: 50%;
+		}
+	}
+}

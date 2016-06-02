@@ -6,7 +6,7 @@ var piluchoApp = angular.module("piluchoApp",["ngRoute", "ui.bootstrap", "ng-bac
  *  Main App Controller
  **/
 
-piluchoApp.controller('mainController', ['$rootScope', 'Compartir', '$location', function ($rootScope, Compartir, $location) {
+piluchoApp.controller('mainController', ['$rootScope', 'Compartir', '$location', function ($scope, $rootScope, Compartir, $location) {
 	$rootScope.userLogin = false;
 	$rootScope.userRecord = false;
 	$rootScope.getPath = function(id) {

@@ -112,6 +112,33 @@ body {
     .top-animate.ng-animate.ng-hide-add.ng-hide {
       top: -100% !important; }
 
+.page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #E2383C;
+  z-index: 99999; }
+  .page-loader.ng-leave {
+    opacity: 1;
+    -ms-transition: opacity linear 0.2s;
+    -o-transition: opacity linear 0.2s;
+    -moz-transition: opacity linear 0.2s;
+    -webkit-transition: opacity linear 0.2s;
+    transition: opacity linear 0.2s; }
+    .page-loader.ng-leave.ng-leave-active {
+      opacity: 0; }
+  .page-loader .content {
+    margin: 16% auto 0; }
+    .page-loader .content img {
+      display: block;
+      margin: 10px auto 0;
+      max-width: 100px; }
+    @media screen and (max-width: 580px) {
+      .page-loader .content {
+        margin-top: 50%; } }
+
 #main-menu {
   position: fixed;
   z-index: 1000;
@@ -620,7 +647,10 @@ body {
 #home {
   position: relative;
   display: block;
-  padding-top: 130px; }
+  padding-top: 130px;
+  background: url(../img/home/bg.jpg);
+  background-size: auto 100%;
+  background-position: center; }
   @media screen and (max-width: 580px) {
     #home {
       padding-top: 30px; } }

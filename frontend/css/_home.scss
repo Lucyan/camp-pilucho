@@ -2,6 +2,9 @@
 	position: relative;
 	display: block;
 	padding-top: 130px;
+	background: url(../img/home/bg.jpg);
+	background-size: auto 100%;
+	background-position: center;
 
 	@media screen and (max-width: $screen-xs) {
 		padding-top: 30px;

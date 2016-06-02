@@ -45,6 +45,12 @@
     <!-- <div ng-include="'app/controllers/menu/template.html'" id="container-menu"></div> -->
 
     <div id="content">
+      <div ng-if="pageLoader" class="page-loader">
+        <div class="content text-center">
+          <img src="img/campana.png">
+          <img src="img/loader.svg">
+        </div>
+      </div>
       <ng-include src="'app/modules/menu/menu.template.html'" ng-controller="menuController" id="main-menu" ng-class="{scroll: !toppage}"></ng-include>
       <div ng-view></div>
     </div>
@@ -123,6 +129,7 @@
     <!-- Factories -->
     <script src="app/factory/user.js"></script>
     <script src="app/factory/compartir.js"></script>
+    <script src="app/factory/preloader.js"></script>
     <!-- / Factories -->
 
   <!-- / Application -->
