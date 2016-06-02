@@ -254,7 +254,8 @@ body {
   background-color: #E2383C; }
   #agegate .logo {
     margin-top: 15px;
-    margin-left: 20px; }
+    margin-left: 20px;
+    width: 161px; }
   @media screen and (max-width: 580px) {
     #agegate {
       text-align: center;
