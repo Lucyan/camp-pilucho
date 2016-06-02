@@ -86,7 +86,7 @@ piluchoApp.run(function (User, preloader, $rootScope){
 		'/img/velo.png'
 	];
 
-	preloader.preloadImages(imageList).then(function() {
+	preloader.loadSet(imageList, function() {
 		setTimeout(function() {
 			$rootScope.pageLoader = false;
 			$rootScope.$apply();
