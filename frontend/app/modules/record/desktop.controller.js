@@ -1,4 +1,4 @@
-piluchoApp.controller("recordDektopController", function ($scope, User, $rootScope, deviceDetector) {
+piluchoApp.controller("recordDektopController", function ($scope, User, $rootScope, deviceDetector, Compartir, $location) {
 	var mediaConstraints = {
 		audio: true
 	};
@@ -223,5 +223,19 @@ piluchoApp.controller("recordDektopController", function ($scope, User, $rootSco
 		}
 
 		$scope.movilClose = 'Cancelar';
+	}
+
+	$scope.getPath = function(id) {
+		var url = $location.protocol() + "://" + $location.host();
+		if (id) url += '/ver/' + id;
+		return url;
+	}
+
+	$scope.shareFB = function(id) {
+		Compartir.fb(id);
+	}
+
+	$scope.shareTW = function(id) {
+		Compartir.tw(id);
 	}
 });

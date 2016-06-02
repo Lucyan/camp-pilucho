@@ -1,4 +1,4 @@
-piluchoApp.controller("galeriaController", function ($scope, $http, deviceDetector, $routeParams) {
+piluchoApp.controller("galeriaController", function ($scope, $http, deviceDetector, $routeParams, Compartir, $location) {
 	$scope.listGallery = [];
 	$scope.showMore = true;
 	$scope.inPlay = false;
@@ -98,4 +98,18 @@ piluchoApp.controller("galeriaController", function ($scope, $http, deviceDetect
     $scope.closeSingle = function() {
     	$scope.viewSingle = false;
     }
+
+    $scope.getPath = function(id) {
+		var url = $location.protocol() + "://" + $location.host() + ":" + $location.port();
+		if (id) url += '/ver/' + id;
+		return url;
+	}
+
+	$scope.shareFB = function(id) {
+		Compartir.fb(id);
+	}
+
+	$scope.shareTW = function(id) {
+		Compartir.tw(id);
+	}
 });
