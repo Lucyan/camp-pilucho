@@ -5,6 +5,8 @@ html, body {
 
 body #content {
   max-width: 900px;
-  margin: 0 auto; }
+  margin: 0px auto 0; }
+  body #content .view {
+    margin-top: 10px; }
 
 /*# sourceMappingURL=style.css.map */

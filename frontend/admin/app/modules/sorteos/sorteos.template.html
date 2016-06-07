@@ -1,0 +1,46 @@
+<div id="sorteos" class="ui segment">
+	<h1 class="ui header">Admin Sorteos</h1>
+	<div class="ui divider"></div>
+	<div class="packs">
+		<h2 class="ui header">Sorteos Pack Del Hincha</h2>
+		<div class="ui menu">
+			<div class="item">
+				<div class="ui primary button" ng-click="openPackSorteo()">Nuevo sorteo</div>
+			</div>
+		</div>
+		<table class="ui celled structured table">
+			<thead>
+				<tr>
+					<th>Ganador</th>
+					<th>Audio</th>
+					<th>Sorteo</th>
+					<th>Publicar</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="winner in packList track by $index">
+					<td class="collapsing">
+						<h4 class="ui image header">
+							<img ng-src="//graph.facebook.com/{{winner.fb_id}}/picture?type=square" class="ui mini rounded image">
+							<div class="content">
+								<a ng-href="//www.facebook.com/{{winner.fb_id}}" target="_blank">{{winner.name}}</a>
+								<div class="sub header">{{winner.email}}</div>
+							</div>
+						</h4>
+					</td>
+					<td class="collapsing">
+						<audio controls>
+							<source ng-src="{{winner.audio}}" type="audio/wav">
+						</audio>
+					</td>
+					<td class="collapsing">{{winner.sorteo}}</td>
+					<td class="collapsing">
+					<div class="ui toggle checkbox">
+						<input type="checkbox" ng-checked="winner.active" ng-model="checkbox[$index]" ng-change="toggleActive($index);"> <label></label>
+					</div>
+				</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

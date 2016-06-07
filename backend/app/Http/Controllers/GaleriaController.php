@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Record;
+use App\Models\Winner;
 
 class GaleriaController extends Controller {
 
@@ -38,13 +39,25 @@ class GaleriaController extends Controller {
 
     public function adminGet(Request $request) {
         $page = $request->get('page');
+        $active = $request->get('active');
         $limit = 10;
-        $list = Record::select('recordings.id', 'recordings.audio', 'recordings.created_at', 'users.name', 'users.fb_id', 'users.email', 'recordings.active')
-            ->orderBy('recordings.id', 'desc')
-            ->take($limit)
-            ->skip($page * $limit)
-            ->join('users', 'recordings.user_id', '=', 'users.id')
-            ->get();
+
+        if ($active) {
+            $list = Record::select('recordings.id', 'recordings.audio', 'recordings.created_at', 'users.name', 'users.fb_id', 'users.email', 'recordings.active')
+                ->where('active', 1)
+                ->orderBy('recordings.id', 'desc')
+                ->take($limit)
+                ->skip($page * $limit)
+                ->join('users', 'recordings.user_id', '=', 'users.id')
+                ->get();
+        } else {
+            $list = Record::select('recordings.id', 'recordings.audio', 'recordings.created_at', 'users.name', 'users.fb_id', 'users.email', 'recordings.active')
+                ->orderBy('recordings.id', 'desc')
+                ->take($limit)
+                ->skip($page * $limit)
+                ->join('users', 'recordings.user_id', '=', 'users.id')
+                ->get();
+        }
 
         return response()->json($list);
     }
@@ -70,5 +83,53 @@ class GaleriaController extends Controller {
         }
 
         return response()->json(['record' => $record, 'user' => $user]);
+    }
+
+    public function markWinner(Request $request) {
+        $id = $request->get('id');
+
+        $record = Record::find($id);
+
+        if ($record) {
+            $user = $record->user()->get()[0];
+
+            $winner = new Winner();
+
+            $winner->user_id = $user->id;
+            $winner->type = 'pack';
+            $winner->sorteo = date('Y-m-d H:i:s');
+            $winner->record_id = $record->id;
+
+            $winner->save();
+
+            return response()->json(['record' => $record, 'user' => $user, 'winner' => $winner]);
+        } else {
+            return response()->json(['msg' => 'Grabación no encontrada'], 409);
+        }
+    }
+
+    public function packs(Request $request) {
+        $page = $request->get('page');
+        $limit = 10;
+
+        $list = Winner::select('winners.id', 'users.fb_id', 'users.name', 'users.name', 'users.email', 'recordings.audio', 'winners.sorteo', 'winners.active')
+            ->orderBy('winners.id', 'desc')
+            ->take($limit)
+            ->skip($page * $limit)
+            ->join('users', 'winners.user_id', '=', 'users.id')
+            ->join('recordings', 'winners.record_id', '=', 'recordings.id')
+            ->get();
+
+        return response()->json($list);
+    }
+
+    public function toogleActivePack(Request $request) {
+        $id = $request->get('id');
+
+        $winner = Winner::find($id);
+        $winner->active = ($winner->active) ? false : true;
+        $winner->save();
+
+        return response()->json(['active' => $winner->active]);
     }
 }

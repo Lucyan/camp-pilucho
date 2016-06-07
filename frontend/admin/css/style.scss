@@ -7,6 +7,10 @@ html, body {
 body {
 	#content {
 		max-width: 900px;
-		margin: 0 auto;
+		margin: 0px auto 0;
+
+		.view {
+			margin-top: 10px;
+		}
 	}
 }

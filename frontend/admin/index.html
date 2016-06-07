@@ -36,7 +36,8 @@
     <!-- <div ng-include="'app/controllers/menu/template.html'" id="container-menu"></div> -->
 
     <div id="content">
-      <div ng-view></div>
+      <ng-include src="'app/modules/menu/menu.template.html'"></ng-include>
+      <div ng-view ng-show="view_app" class="view"></div>
     </div>
 
     <!-- <footer ng-include="'app/controllers/footer/template.html'"></footer> -->
@@ -67,7 +68,9 @@
     <script src="app/run.js"></script>
 
     <!-- Modules -->
-    <script src="app/modules/home/homeController.js"></script>
+    <script src="app/modules/home/home.controller.js"></script>
+    <script src="app/modules/sorteos/sorteos.controller.js"></script>
+    <script src="app/modules/sorteos/modal.controller.js"></script>
     <!-- <script src="app/modules/example/exampleController.js"></script> -->
     <!-- / Modules -->
 

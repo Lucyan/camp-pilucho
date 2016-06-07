@@ -1,0 +1,41 @@
+<div class="ui segment sorteo">
+	<div class="header">
+		<h4>Selecciona un ganador, Fecha de Sorteo: 19/19/2999</h4>
+	</div>
+	<div class="ui divider"></div>
+	<div class="content">
+		<table class="ui celled structured table">
+			<thead>
+				<tr>
+					<th>Usuario</th>
+					<th>Audio</th>
+					<th>Seleccionar</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="record in userList track by $index">
+					<td class="collapsing">
+						<h4 class="ui image header">
+							<img ng-src="//graph.facebook.com/{{record.fb_id}}/picture?type=square" class="ui mini rounded image">
+							<div class="content">
+								<a ng-href="//www.facebook.com/{{record.fb_id}}" target="_blank">{{record.name}}</a>
+								<div class="sub header">{{record.email}}</div>
+							</div>
+						</h4>
+					</td>
+					<td class="collapsing">
+						<audio controls>
+							<source ng-src="{{record.audio}}" type="audio/wav">
+						</audio>
+					</td>
+					<td class="collapsing">
+						<div class="ui primary green button" ng-click="markWinner($index)">Marcar como Ganador</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="ui text-center">
+			<button class="ui primary button" ng-click="cargarMas();" ng-show="haymas">Cargar Más</button>
+		</div>
+	</div>
+</div>

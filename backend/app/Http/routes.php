@@ -67,4 +67,22 @@ $app->group(["prefix" => "admin", "namespace" => "App\Http\Controllers"], functi
 		'middleware' => 'admin',
 		'uses' => 'GaleriaController@toogleActive'
 	]);
+
+	$app->post('/markwinner', [
+		'as' => 'markWinner',
+		'middleware' => 'admin',
+		'uses' => 'GaleriaController@markWinner'
+	]);
+
+	$app->get('/packs', [
+		'as' => 'packs',
+		'middleware' => 'admin',
+		'uses' => 'GaleriaController@packs'
+	]);
+
+	$app->post('/toogleactivepack', [
+		'as' => 'toogleActivePack',
+		'middleware' => 'admin',
+		'uses' => 'GaleriaController@toogleActivePack'
+	]);
 });
