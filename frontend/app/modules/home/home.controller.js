@@ -6,7 +6,7 @@ piluchoApp.controller("homeController", function ($scope, User, $rootScope) {
 		});
 	}
 
-	$scope.grabar = function() {
+	$rootScope.grabar = function() {
 		$rootScope.userRecord = true;
 	}
 

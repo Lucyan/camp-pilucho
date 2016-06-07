@@ -950,7 +950,7 @@ body {
   padding-bottom: 100px;
   background-color: #fff; }
   #premios .container {
-    max-width: 680px; }
+    max-width: 880px; }
     @media screen and (max-width: 580px) {
       #premios .container .row > div:last-child {
         margin-top: 80px; } }
@@ -958,8 +958,10 @@ body {
     margin-bottom: 50px; }
   #premios p {
     color: #AC2B3E;
-    max-width: 200px;
-    margin: 20px auto 0; }
+    margin: 20px auto 0;
+    font-size: 18px; }
+  #premios .btn-participar {
+    margin-top: 70px; }
   #premios .footer {
     position: absolute;
     bottom: 0px;

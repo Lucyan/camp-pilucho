@@ -6,7 +6,7 @@
 	background-color: $color-white;
 
 	.container {
-		max-width: 680px;
+		max-width: 880px;
 
 		@media screen and (max-width: $screen-xs) {
 			.row > div:last-child {
@@ -21,8 +21,12 @@
 
 	p {
 		color: $color-black-red;
-		max-width: 200px;
 		margin: 20px auto 0;
+		font-size: 18px;
+	}
+
+	.btn-participar {
+		margin-top: 70px;
 	}
 
 	.footer {
