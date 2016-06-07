@@ -3,15 +3,15 @@
 		<div class="col-sm-7 text-right conectar">
 			<div class="text-center">
 				<img src="img/home/llamado.png" class="title">
-				<div class="loader" ng-show="loader">
+				<div class="loader no-animate" ng-show="loader">
 					<img src="img/home/loader.svg">
 				</div>
-				<div class="views" ng-show="!loader">
-					<div class="login" ng-show="!userLogin">
+				<div class="views no-animate" ng-show="!loader">
+					<div class="login no-animate" ng-show="!userLogin">
 						<button class="button facebook" ng-click="login();"><i class="fa fa-facebook" aria-hidden="true"></i> Conéctate con Facebook</button>
 						<p>Para participar tienes que iniciar sesión</p>
 					</div>
-					<div class="game" ng-show="userLogin">
+					<div class="game no-animate" ng-show="userLogin">
 						<button class="button red" ng-click="grabar();">GRABAR ARENGA</button>
 						<button href="#premios" ng-click="goTo($event)" class="button">VER PREMIOS</button>
 					</div>

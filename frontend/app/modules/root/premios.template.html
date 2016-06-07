@@ -1,6 +1,6 @@
 <img src="img/premios/title.png" class="title">
 
-<div class="container text-center">
+<div class="container text-center" ng-controller="homeController">
 	<div class="row">
 		<div class="col-sm-6">
 			<img src="img/premios/premio1.png">
@@ -13,6 +13,20 @@
 			<p>
 				Un Pack del Hincha por semana, compuesto de dos Kit Campanario + 2 Bebidas Cola de 1.5
 			</p>
+		</div>
+	</div>
+	<div class="row btn-participar">
+		<div class="col-sm-12">
+			<div class="loader no-animate" ng-show="loader">
+				<img src="img/home/loader.svg">
+			</div>
+			<div class="views no-animate" ng-show="!loader">
+				<div class="login no-animate" ng-show="!userLogin">
+					<button class="button facebook" ng-click="login();"><i class="fa fa-facebook" aria-hidden="true"></i> Conéctate con Facebook</button>
+					<p>Para participar tienes que iniciar sesión</p>
+				</div>
+				<button class="button red no-animate" ng-click="grabar();" ng-show="userLogin">GRABA TU ARENGA</button>
+			</div>
 		</div>
 	</div>
 </div>

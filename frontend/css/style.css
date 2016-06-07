@@ -112,6 +112,10 @@ body {
     .top-animate.ng-animate.ng-hide-add.ng-hide {
       top: -100% !important; }
 
+.no-animate {
+  -webkit-transition: none !important;
+  transition: none !important; }
+
 .page-loader {
   position: fixed;
   top: 0;
