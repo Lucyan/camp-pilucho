@@ -11,4 +11,9 @@ final class User extends Model
     {
         return $this->hasMany('App\Models\Record');
     }
+
+    public function winners()
+    {
+        return $this->hasMany('App\Models\Winner');
+    }
 }

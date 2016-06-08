@@ -1016,6 +1016,12 @@ body {
             #ganadores .packs .content .list ul li .sorteo {
               margin-top: 10px;
               margin-bottom: 20px; }
+            #ganadores .packs .content .list ul li .user img {
+              -ms-border-radius: 50%;
+              -o-border-radius: 50%;
+              -moz-border-radius: 50%;
+              -webkit-border-radius: 50%;
+              border-radius: 50%; }
         #ganadores .packs .content .list .controles {
           position: absolute;
           width: 80%;

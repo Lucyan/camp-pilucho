@@ -132,4 +132,25 @@ class GaleriaController extends Controller {
 
         return response()->json(['active' => $winner->active]);
     }
+
+    public function getWinners(Request $request) {
+        $winners = Winner::all();
+
+        $resp = [];
+
+        foreach ($winners as $key => $winner) {
+            $user = $winner->user()->get()[0];
+            
+            $data = [
+                'title' => 'SORTEO: ' . date( 'd-m-Y', strtotime( $winner->sorteo ) ),
+                'ganador' => [
+                    'avatar' => '//graph.facebook.com/' . $user->fb_id . '/picture?type=square',
+                    'name' => $user->name
+                ]
+            ];
+
+            array_push($resp, $data);
+        }
+        return response()->json(['winners' => $resp]);
+    }
 }

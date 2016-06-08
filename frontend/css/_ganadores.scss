@@ -47,6 +47,10 @@
 							margin-top: 10px;
 							margin-bottom: 20px;
 						}
+
+						.user img {
+							@include cross-browser(border-radius, 50%);
+						}
 					}
 				}
 

@@ -54,6 +54,14 @@ $app->group(["prefix" => "galeria", "namespace" => "App\Http\Controllers"], func
 	]);
 });
 
+$app->group(["prefix" => "winners", "namespace" => "App\Http\Controllers"], function ($app) {
+
+	$app->get('/', [
+		'as' => 'getWinners',
+		'uses' => 'GaleriaController@getWinners'
+	]);
+});
+
 $app->group(["prefix" => "admin", "namespace" => "App\Http\Controllers"], function ($app) {
 
 	$app->get('/galeria', [

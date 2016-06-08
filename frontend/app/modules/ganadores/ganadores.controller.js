@@ -1,20 +1,5 @@
-piluchoApp.controller("ganadoresController", function ($scope) {
-	$scope.sorteos = [
-		{
-			title: 'PRIMER SORTEO: 12-06-2015',
-			ganador: {
-				avatar: 'img/galeria/user.png',
-				name: 'Leonardo Olivares Montoya'
-			}
-		},
-		{
-			title: 'PRIMER SORTEO: 12-06-2015',
-			ganador: {
-				avatar: 'img/galeria/user.png',
-				name: 'Leonardo Olivares Montoya'
-			}
-		}
-	];
+piluchoApp.controller("ganadoresController", function ($scope, $http) {
+	$scope.sorteos = [];
 
 	$scope.indexList = 0;
 
@@ -25,4 +10,8 @@ piluchoApp.controller("ganadoresController", function ($scope) {
 			width: $scope.elementWidth + 'px'
 		}
 	}
+
+	$http.get('/api/winners/').then(function(resp) {
+		$scope.sorteos = resp.data.winners;
+	});
 });
