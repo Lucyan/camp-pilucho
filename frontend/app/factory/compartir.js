@@ -14,7 +14,7 @@ piluchoApp.factory("Compartir", function ($location){
 		tw: function(id) {
 			var shareURL = url;
 			if (id) shareURL += '/ver/' + id;
-			var mensaje = encodeURIComponent('Ingresa ahora, dale un grito de apoyo a Chile y participa por fabulosos premios');
+			var mensaje = encodeURIComponent('Acabo de alentar a Chile junto al Pilucho. Ahora estoy participando por increíbles premios. Escucha mi arenga aquí.');
 			var shareURL = encodeURIComponent(shareURL);
 
 			var urlTwitter = 'https://twitter.com/intent/tweet?text=';
