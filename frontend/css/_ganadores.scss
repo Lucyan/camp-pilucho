@@ -108,6 +108,50 @@
 		}
 	}
 
+	.packs-movil {
+		ul {
+			list-style: none;
+			padding: 0px 10px;
+
+			li {
+				margin-bottom: 2px;
+				text-align: left;
+				color: $color-white;
+				overflow: hidden;
+
+				.sorteo {
+					height: 66px;
+					background-color: #E2383C;
+					line-height: 66px;
+					padding: 0px 20px;
+
+					i {
+						line-height: 66px;
+						font-size: 25px;
+					}
+				}
+
+				.user {
+					height: 66px;
+					background-color: #B82326;
+					line-height: 66px;
+					margin-top: 1px;
+					padding: 0px 20px;
+					max-height: 0px;
+					@include cross-browser(transition, max-height linear .1s);
+
+					&.open {
+						max-height: 66px;
+					}
+
+					img {
+						@include cross-browser(border-radius, 50%);
+					}
+				}
+			}
+		}
+	}
+
 	.super {
 		width: 620px;
 		height: 194px;

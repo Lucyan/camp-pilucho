@@ -1076,6 +1076,42 @@ body {
           font-size: 25px;
           padding-top: 47px;
           margin: 0 10px; } }
+  #ganadores .packs-movil ul {
+    list-style: none;
+    padding: 0px 10px; }
+    #ganadores .packs-movil ul li {
+      margin-bottom: 2px;
+      text-align: left;
+      color: #fff;
+      overflow: hidden; }
+      #ganadores .packs-movil ul li .sorteo {
+        height: 66px;
+        background-color: #E2383C;
+        line-height: 66px;
+        padding: 0px 20px; }
+        #ganadores .packs-movil ul li .sorteo i {
+          line-height: 66px;
+          font-size: 25px; }
+      #ganadores .packs-movil ul li .user {
+        height: 66px;
+        background-color: #B82326;
+        line-height: 66px;
+        margin-top: 1px;
+        padding: 0px 20px;
+        max-height: 0px;
+        -ms-transition: max-height linear 0.1s;
+        -o-transition: max-height linear 0.1s;
+        -moz-transition: max-height linear 0.1s;
+        -webkit-transition: max-height linear 0.1s;
+        transition: max-height linear 0.1s; }
+        #ganadores .packs-movil ul li .user.open {
+          max-height: 66px; }
+        #ganadores .packs-movil ul li .user img {
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -webkit-border-radius: 50%;
+          border-radius: 50%; }
   #ganadores .super {
     width: 620px;
     height: 194px;

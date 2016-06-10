@@ -2,7 +2,7 @@
 
 <img src="img/ganadores/movil/title.png" class="title-semanal">
 
-<div class="packs">
+<div class="packs hidden-xs">
 	<div class="content">
 		<div class="list" ng-init="setStyle()">
 			<ul ng-style="{width:elementWidth * sorteos.length, 'margin-left': elementWidth * indexList * -1}">
@@ -20,6 +20,18 @@
 			</div>
 		</div>
 	</div>
+</div>
+
+<div class="packs-movil visible-xs">
+	<ul>
+		<li ng-repeat="sorteo in sorteos">
+			<div class="sorteo">{{sorteo.title}} <i class="fa fa-plus pull-right" aria-hidden="true" ng-click="openWinner($event);"></i></div>
+			<div class="user">
+				<img ng-src="{{sorteo.ganador.avatar}}">
+				<span class="name">{{sorteo.ganador.name}}</span>
+			</div>
+		</li>
+	</ul>
 </div>
 
 <!-- <div class="packs no-winners">
