@@ -134,7 +134,7 @@ class GaleriaController extends Controller {
     }
 
     public function getWinners(Request $request) {
-        $winners = Winner::all();
+        $winners = Winner::where('active', 1)->orderBy('id', 'desc')->get();
 
         $resp = [];
 
