@@ -1176,6 +1176,9 @@ body {
   height: 170px;
   margin-top: -77px;
   background: url(../img/footer/hinchas.png); }
+  @media screen and (max-width: 580px) {
+    #footer {
+      height: 220px; } }
   #footer .content {
     color: #fff;
     padding-top: 110px;
@@ -1197,7 +1200,8 @@ body {
       @media screen and (max-width: 580px) {
         #footer .content .bases {
           position: relative;
-          margin-top: 10px; } }
+          margin-top: 20px;
+          margin-bottom: 0px; } }
     #footer .content > * {
       vertical-align: bottom;
       line-height: 1; }
@@ -1206,7 +1210,7 @@ body {
           display: block;
           margin: 0 auto;
           text-align: center;
-          margin-bottom: 10px; } }
+          margin-bottom: 20px; } }
     @media screen and (max-width: 580px) {
       #footer .content {
         padding-top: 75px; } }
