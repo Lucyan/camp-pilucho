@@ -32,4 +32,12 @@ piluchoAdminAPP.controller("homeController", function ($scope, $http) {
 		page++;
 		$scope.getGaleria(page);
 	}
+
+	$scope.clearFiles = function() {
+		if(confirm('¿Estas seguro que quieres limpiar los archivos de audio no resgistrados del servidor?')) {
+			$http.get('/api/admin/clearwav').then(function(resp) {
+				alert('Se han eliminado ' + resp.data.count + ' archivos no registrados en el servidor');
+			});
+		}
+	}
 });

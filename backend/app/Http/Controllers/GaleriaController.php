@@ -153,4 +153,21 @@ class GaleriaController extends Controller {
         }
         return response()->json(['winners' => $resp]);
     }
+
+    public function adminLimpia() {
+        $uploads_dir = __DIR__ . '/../../../../frontend/uploads/';
+        $list = scandir($uploads_dir);
+        $count = 0;
+        foreach ($list as $key => $file) {
+            if (strpos($file, '.wav')) {
+                $record = Record::where('audio', '/uploads/' . $file)->get();
+
+                if (count($record) == 0) {
+                    unlink($uploads_dir . $file);
+                    $count++;
+                }
+            }
+        }
+        return response()->json(['msg' => 'ok', 'count' => $count]);
+    }
 }

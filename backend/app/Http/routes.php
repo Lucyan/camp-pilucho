@@ -93,4 +93,10 @@ $app->group(["prefix" => "admin", "namespace" => "App\Http\Controllers"], functi
 		'middleware' => 'admin',
 		'uses' => 'GaleriaController@toogleActivePack'
 	]);
+
+	$app->get('/clearwav', [
+		'as' => 'clearWav',
+		'middleware' => 'admin',
+		'uses' => 'GaleriaController@adminLimpia'
+	]);
 });
