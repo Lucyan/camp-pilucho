@@ -12,6 +12,10 @@ piluchoApp.factory("User", function ($http, ezfb, $rootScope){
 					_this.data = resp.data;
 					$rootScope.userLogin = true;
 					if (callback) callback();
+				}, function(resp) {
+					console.log('Login Error!', resp.data);
+					if (callback) callback(false);
+					_this.logout();
 				});
 			}
 

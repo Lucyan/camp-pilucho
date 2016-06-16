@@ -38,11 +38,15 @@ class AuthMiddleware {
 
 			$token  = $request->header('Authorization');
 
-			$payload = (array) JWT::decode($token, getenv("APP_KEY"), array('HS256'));
+			try {
+				$payload = (array) JWT::decode($token, getenv("APP_KEY"), array('HS256'));
+			} catch (Exception $e) {
+				return response()->json(['message' => 'Decode Error', 'error' => $e->getMessage()], 401);
+			}
 
 			if ($payload['exp'] < time())
 			{
-				return response()->json(['message' => 'Token has expired']);
+				return response()->json(['message' => 'Token has expired'], 401);
 			}
 
 			$request['user'] = $payload["user"];
