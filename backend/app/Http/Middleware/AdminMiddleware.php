@@ -41,7 +41,7 @@ class AdminMiddleware {
 
 			try {
 				$payload = (array) JWT::decode($token, getenv("APP_KEY"), array('HS256'));
-			} catch (Exception $e) {
+			} catch (\Firebase\JWT\ExpiredException $e) {
 				return response()->json(['message' => 'Decode Error', 'error' => $e->getMessage()], 401);
 			}
 
